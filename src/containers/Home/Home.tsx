@@ -1,11 +1,13 @@
-import React from 'react'
+import { SearchProps } from "antd/es/input";
+import Search from "antd/es/transfer/search";
+import React from "react";
 
-interface IHomeProps { }
+interface IHomeProps {}
 
 function Home(props: IHomeProps) {
-    return (
-        <div>Home</div>
-    )
+  const onSearch: SearchProps["onSearch"] = (value, _e, info) => console.log(info?.source, value);
+
+  return <div>{/* <Search placeholder="Nome Cognome" onSearch={onSearch} /> */}</div>;
 }
 
-export default Home
+export default Home;

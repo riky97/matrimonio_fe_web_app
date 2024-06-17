@@ -1,0 +1,14 @@
+.about_container {
+  background: url("../../resources/images//1540.jpg");
+  height: 100vh;
+  width: 100%;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.about_container_image {
+  border-radius: 10px;
+}

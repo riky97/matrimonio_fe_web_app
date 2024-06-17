@@ -3,10 +3,11 @@ export class IGetWindowDimension {
   height: number;
 }
 
-export class MockDbModel {
+export class MockDbHouseDescriptionModel {
   title: string;
   description: string;
   image: string;
+  path: string;
   participants?: ParticipantModel[];
 }
 
