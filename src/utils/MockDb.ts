@@ -33,8 +33,8 @@ export const MockDbHouseDescriptions: MockDbHouseDescriptionModel[] = [
     path: "house-arryn",
     participants: [
       {
-        name: "Riccardo",
-        surname: "Ingrasciotta",
+        name: "Mirko",
+        surname: "Pasotti",
       },
     ],
   },

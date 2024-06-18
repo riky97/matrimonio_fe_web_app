@@ -1,0 +1,7 @@
+.ant-modal-confirm-title::after{
+    content: "\1F62D";
+}
+
+.ant-modal-confirm-content::after{
+    content: "\1F601";
+}

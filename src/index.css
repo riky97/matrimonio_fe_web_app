@@ -176,12 +176,20 @@ a {
   margin-top: 50px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 .pt-150 {
   padding-top: 150px;
 }
 
 .pt-50 {
   padding-top: 50px;
+}
+
+.pt-20{
+  padding-top: 20px;
 }
 
 .ptb-100 {
@@ -328,4 +336,10 @@ a {
 
 .section-content__small {
   min-height: 400px;
+}
+
+
+/** BUTTON **/
+.mat__back-button{
+  color: #fff;
 }

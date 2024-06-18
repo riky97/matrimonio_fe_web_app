@@ -1,12 +1,13 @@
-import { Col, Image, Row } from "antd";
+import { Button, Col, Flex, Image, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MockDbHouseDescriptionModel } from "../../utils/Models";
 import { getHouseByPath } from "../../utils/Functions";
 
 import "./About.css";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 
-interface IAboutProps {}
+interface IAboutProps { }
 
 function About(props: IAboutProps) {
   const [houseDescription, setHouseDescription] = useState<MockDbHouseDescriptionModel>(new MockDbHouseDescriptionModel());
@@ -19,9 +20,18 @@ function About(props: IAboutProps) {
     setHouseDescription(getHouseByPath(pathHouse));
   }, []);
 
+  function backToHome() {
+    window.open("/", "_self");
+  }
+
   return (
-    <section className="about_container">
-      <Row style={{ padding: "10px 10px" }}>
+    <section className="about_container" style={{ padding: "10px 10px" }}>
+      <Flex justify="start">
+        <Button icon={<ArrowLeftOutlined />} type="text" size="large" className="mat__back-button" onClick={backToHome}>
+          Torna alla home
+        </Button>
+      </Flex>
+      <Row className="mt-20">
         <Col xs={0} sm={12}>
           <h1>{houseDescription.title}</h1>
 
@@ -33,9 +43,9 @@ function About(props: IAboutProps) {
         </Col>
 
         <Col xs={24} sm={0} className="mt-50">
-          <h1>{houseDescription.title}</h1>
+          <h1 className="text-align-center">{houseDescription.title}</h1>
 
-          <p style={{ paddingTop: 20 }}>{houseDescription.description}</p>
+          <p className="pt-20">{houseDescription.description}</p>
         </Col>
       </Row>
     </section>
