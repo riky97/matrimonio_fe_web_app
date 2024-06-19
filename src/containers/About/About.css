@@ -1,5 +1,5 @@
 .about_container {
-  background: url("../../resources/images//1540.jpg");
+  background: url("../../resources/images/bg_about_04.jpeg");
   height: 100vh;
   width: 100%;
   /* Position and center the image to scale nicely on all screens */
@@ -11,4 +11,8 @@
 
 .about_container_image {
   border-radius: 10px;
+}
+
+.about_contaniner--description{
+  font-family: Augusta;
 }

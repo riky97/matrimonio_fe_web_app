@@ -4,6 +4,8 @@ import { getHouseBySearch } from "../../utils/Functions";
 import { AutoComplete, Button, Input, Modal, SelectProps, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
+import "./Home.css"
+
 interface IHomeProps { }
 
 function Home(props: IHomeProps) {
@@ -67,7 +69,7 @@ function Home(props: IHomeProps) {
   ];
 
   return (
-    <div>
+    <div className="home_container" style={{ padding: "10px 10px" }}>
       <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
       {/* <Search placeholder="Nome Cognome" size="large" onSearch={onSearch} allowClear /> */}
 
@@ -83,6 +85,14 @@ function Home(props: IHomeProps) {
         <Input.Search size="large" placeholder="Nome Cognome" allowClear />
       </AutoComplete> */}
 
+      <div className="d-flex align-items-center justify-content-between mb-20 ">
+        <h1 className="text-align-center">TITOLO </h1>
+
+        <Button type="primary">Visualizza mappa</Button>
+      </div>
+
+
+
       <AutoComplete
         style={{ width: "100%" }}
         options={partecipants.slice(0, 5)}
@@ -90,8 +100,9 @@ function Home(props: IHomeProps) {
         size="large"
         filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
       >
-        <Input.Search size="large" placeholder="Nome Cognome" allowClear />
+        <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
       </AutoComplete>
+
     </div>
   );
 }

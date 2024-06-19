@@ -5,3 +5,13 @@
 .ant-modal-confirm-content::after{
     content: "\1F601";
 }
+
+/* .ant-btn-default{
+    background: transparent;
+    border: 1px solid brown;
+} */
+
+/** BUTTON **/
+.go-back-button{
+    color: #fff;
+  }

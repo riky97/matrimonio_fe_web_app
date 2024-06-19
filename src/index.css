@@ -24,6 +24,16 @@
   src: url("./resources/fonts/Game\ of\ Thrones.ttf");
 }
 
+@font-face {
+  font-family: Augusta;
+  src: url("./resources/fonts/Augusta.ttf");
+}
+
+@font-face {
+  font-family: Augusta-Shadow;
+  src: url("./resources/fonts/Augusta-Shadow.ttf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -51,7 +61,7 @@ span,
 pre,
 div,
 a {
-  font-family: Raleway-Light;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 @media only screen and (min-width: 480px) {
@@ -71,7 +81,7 @@ a {
   pre,
   div,
   a {
-    font-size: 18px !important;
+    font-size: 26px !important;
   }
 }
 
@@ -192,6 +202,14 @@ a {
   padding-top: 20px;
 }
 
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
 .ptb-100 {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -296,7 +314,7 @@ a {
   justify-content: start;
 }
 
-.justify-content-space-between {
+.justify-content-between {
   justify-content: space-between;
 }
 
@@ -336,10 +354,4 @@ a {
 
 .section-content__small {
   min-height: 400px;
-}
-
-
-/** BUTTON **/
-.mat__back-button{
-  color: #fff;
 }

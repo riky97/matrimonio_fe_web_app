@@ -27,7 +27,7 @@ function About(props: IAboutProps) {
   return (
     <section className="about_container" style={{ padding: "10px 10px" }}>
       <Flex justify="start">
-        <Button icon={<ArrowLeftOutlined />} type="text" size="large" className="mat__back-button" onClick={backToHome}>
+        <Button icon={<ArrowLeftOutlined />} type="text" size="large" className="go-back-button" onClick={backToHome}>
           Torna alla home
         </Button>
       </Flex>
@@ -45,7 +45,7 @@ function About(props: IAboutProps) {
         <Col xs={24} sm={0} className="mt-50">
           <h1 className="text-align-center">{houseDescription.title}</h1>
 
-          <p className="pt-20">{houseDescription.description}</p>
+          <p className="pt-20 about_contaniner--description">{houseDescription.description}</p>
         </Col>
       </Row>
     </section>
