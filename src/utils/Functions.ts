@@ -16,8 +16,8 @@ export function getHouseBySearch(search: string): MockDbHouseDescriptionModel | 
 
 function findPartecipantBySearch(ele: MockDbHouseDescriptionModel, search: string): ParticipantModel {
   const findPartecipant = ele.participants.find((x) => {
-    let completeName = x.name.toLocaleLowerCase() + x.surname.toLocaleLowerCase();
-    return completeName === search.replace(/\s/g, "").toLocaleLowerCase();
+    let completeName = x.name.toUpperCase() + x.surname.toUpperCase();
+    return completeName === search.replace(/\s/g, "").toUpperCase();
   });
   return findPartecipant;
 }

@@ -1,16 +1,16 @@
 import { MockDbHouseDescriptionModel } from "./Models";
 
-import HouseTyrell from "../resources/images/HouseTyrell.jpg";
-import HouseArryn from "../resources/images/HouseArryn.jpg";
-import HouseBaratheon from "../resources/images/HouseBaratheon.jpg";
-import HouseBolton from "../resources/images/HouseBolton.jpg";
-import HouseGreyjoy from "../resources/images/HouseGreyjoy.jpg";
-import HouseMartel from "../resources/images/HouseMartel.jpg";
-import HouseMormont from "../resources/images/HouseMormont.jpg";
-import HouseStark from "../resources/images/HouseStark.jpg";
-import HouseTargaryen from "../resources/images/HouseTargaryen.jpg";
-import HouseLannister from "../resources/images/HouseLannister.jpg";
-import HouseTarly from "../resources/images/HouseTarly.jpg";
+import HouseTyrell from "../resources/images/house/HouseTyrell.jpg";
+import HouseArryn from "../resources/images/house/HouseArryn.jpg";
+import HouseBaratheon from "../resources/images/house/HouseBaratheon.jpg";
+import HouseBolton from "../resources/images/house/HouseBolton.jpg";
+import HouseGreyjoy from "../resources/images/house/HouseGreyjoy.jpg";
+import HouseMartel from "../resources/images/house/HouseMartel.jpg";
+import HouseMormont from "../resources/images/house/HouseMormont.jpg";
+import HouseStark from "../resources/images/house/HouseStark.jpg";
+import HouseTargaryen from "../resources/images/house/HouseTargaryen.jpg";
+import HouseLannister from "../resources/images/house/HouseLannister.jpg";
+import HouseTarly from "../resources/images/house/HouseTarly.jpg";
 
 export const MockDbHouseDescriptions: MockDbHouseDescriptionModel[] = [
   {

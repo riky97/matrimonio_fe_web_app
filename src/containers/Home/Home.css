@@ -1,10 +1,15 @@
-.home_container{
-    background: url("../../resources/images/bg_home_01.jpg");
-    height: 100vh;
-    width: auto;
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.home_container {
+  background: url("../../resources/images/bg/bg_home_03.jpg");
+  height: 100vh;
+  width: auto;
+  position: relative;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.home_container_image {
+  background-size: cover;
 }

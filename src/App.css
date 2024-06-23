@@ -1,9 +1,9 @@
-.ant-modal-confirm-title::after{
-    content: "\1F62D";
+.ant-modal-confirm-title::after {
+  content: "\1F62D";
 }
 
-.ant-modal-confirm-content::after{
-    content: "\1F601";
+.ant-modal-confirm-content::after {
+  content: "\1F601";
 }
 
 /* .ant-btn-default{
@@ -12,6 +12,14 @@
 } */
 
 /** BUTTON **/
-.go-back-button{
-    color: #fff;
-  }
+.go-back-button {
+  color: #fff;
+}
+
+.ant-btn-primary,
+.ant-btn-primary:active {
+  background: #fff !important;
+  box-shadow: none !important;
+  color: #000 !important;
+  border: 2px solid #ddd !important;
+}
