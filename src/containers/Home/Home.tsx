@@ -1,14 +1,15 @@
 import Search from "antd/es/input/Search";
 import React, { useState } from "react";
 import { getHouseBySearch } from "../../utils/Functions";
-import { AutoComplete, Button, Image, Input, Modal, SelectProps, Spin } from "antd";
+import { AutoComplete, Button, Col, Flex, Image, Input, Modal, Row, SelectProps, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import BG_HOME_02 from "../../resources/images/bg/bg_home_02-removebg-preview.png";
 
 import "./Home.css";
+import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 
-interface IHomeProps {}
+interface IHomeProps { }
 
 function Home(props: IHomeProps) {
   const [spinning, setSpinning] = useState<boolean>(false);
@@ -94,24 +95,39 @@ function Home(props: IHomeProps) {
           <Button type="primary">Visualizza mappa</Button>
         </div> */}
 
-        <div className="d-flex align-items-center justify-content-end mb-20 ">
+        {/* <Flex justify="end" align="center" className="mb-20">
           <Button type="primary">Visualizza mappa</Button>
-        </div>
+        </Flex> */}
 
-        <AutoComplete
-          style={{ width: "100%" }}
-          options={partecipants.slice(0, 5)}
-          onSelect={onSearchAutoComplete}
-          size="large"
-          filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
-        >
-          <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
-        </AutoComplete>
+        <Row style={{ marginTop: 20 }}>
+          <Col xs={24} sm={24}>
+            <AutoComplete
+              style={{ width: "100%" }}
+              options={partecipants.slice(0, 5)}
+              onSelect={onSearchAutoComplete}
+              size="large"
+              filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+              className="home_container_searchBar"
+            >
+              <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
+            </AutoComplete>
 
-        <Image src={BG_HOME_02} preview={false} className="home_container_image" />
+          </Col>
+        </Row>
+
+        <Row className="mt-100">
+          <Col sm={24}>
+            <Flex justify="center" align="center">
+              <Image src={BG_HOME_02} preview={false} className="home_container_image" />
+            </Flex>
+
+          </Col>
+        </Row>
 
         {/* <div className="home_container--image"></div> */}
       </div>
+
+      <BottomNavbar />
     </>
   );
 }
