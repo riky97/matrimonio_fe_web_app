@@ -18,7 +18,7 @@ function About(props: IAboutProps) {
     const pathHouse = location.pathname.split("/")[2];
     console.log("pathHouse", pathHouse);
     setHouseDescription(getHouseByPath(pathHouse));
-  }, []);
+  }, [location]);
 
   return (
     <>
