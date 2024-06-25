@@ -1,11 +1,10 @@
-import { Button, Col, Flex, Image, Row } from "antd";
+import { Col, Image, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MockDbHouseDescriptionModel } from "../../utils/Models";
 import { getHouseByPath } from "../../utils/Functions";
 
 import "./About.css";
-import { ArrowLeftOutlined } from "@ant-design/icons";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 
 interface IAboutProps {}
@@ -20,10 +19,6 @@ function About(props: IAboutProps) {
     console.log("pathHouse", pathHouse);
     setHouseDescription(getHouseByPath(pathHouse));
   }, []);
-
-  function backToHome() {
-    window.open("/", "_self");
-  }
 
   return (
     <>

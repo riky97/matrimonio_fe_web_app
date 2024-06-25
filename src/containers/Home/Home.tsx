@@ -1,7 +1,6 @@
-import Search from "antd/es/input/Search";
 import React, { useState } from "react";
 import { getHouseBySearch } from "../../utils/Functions";
-import { AutoComplete, Button, Col, Flex, Image, Input, Modal, Row, SelectProps, Spin } from "antd";
+import { AutoComplete, Col, Flex, Image, Input, Modal, Row, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import BG_HOME_02 from "../../resources/images/bg/bg_home_02-removebg-preview.png";
@@ -23,23 +22,23 @@ function Home(props: IHomeProps) {
     });
   };
 
-  function onSearch(value: string, _e: any, info: any): void {
-    setSpinning(true);
+  // function onSearch(value: string, _e: any, info: any): void {
+  //   setSpinning(true);
 
-    setTimeout(() => {
-      const houseSearched = getHouseBySearch(value);
-      try {
-        console.log("houseSearched", houseSearched);
-        if (!houseSearched) throw new Error("User not found!");
-        navigate(`/about/${houseSearched.path}`, { state: { user: value } });
-      } catch (error) {
-        console.log("error", error);
-        modalError();
-      } finally {
-        setSpinning(false);
-      }
-    }, 1000);
-  }
+  //   setTimeout(() => {
+  //     const houseSearched = getHouseBySearch(value);
+  //     try {
+  //       console.log("houseSearched", houseSearched);
+  //       if (!houseSearched) throw new Error("User not found!");
+  //       navigate(`/about/${houseSearched.path}`, { state: { user: value } });
+  //     } catch (error) {
+  //       console.log("error", error);
+  //       modalError();
+  //     } finally {
+  //       setSpinning(false);
+  //     }
+  //   }, 1000);
+  // }
 
   function onSearchAutoComplete(value: string): void {
     setSpinning(true);

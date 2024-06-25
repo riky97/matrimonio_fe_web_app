@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./BottomNavbar.css";
-import { Button, Flex } from "antd";
+import { Flex } from "antd";
 import { AimOutlined, HomeFilled } from "@ant-design/icons";
 
 interface IBottomNavbarProps {}
