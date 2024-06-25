@@ -10,17 +10,16 @@
   position: relative;
 }
 
-.home_container_image {
+/* .home_container_image {
   object-fit: none;
-}
+} */
 
-
-.home_container_searchBar .ant-input-affix-wrapper{
+.home_container_searchBar .ant-input-affix-wrapper {
   border-start-start-radius: 30px !important;
-    border-end-start-radius: 30px !important;
+  border-end-start-radius: 30px !important;
 }
 
-.home_container_searchBar button{
+.home_container_searchBar button {
   border-start-end-radius: 30px !important;
   border-end-end-radius: 30px !important;
 }
