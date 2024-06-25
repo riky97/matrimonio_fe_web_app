@@ -5,6 +5,7 @@ import Home from "./containers/Home/Home";
 import About from "./containers/About/About";
 import NoMatch from "./containers/NoMatch/NoMatch";
 import { ConfigProvider } from "antd";
+import BottomNavbar from "./components/BottomNavbar/BottomNavbar";
 
 type ThemeData = {
   borderRadius: number;
@@ -18,20 +19,20 @@ type ThemeData = {
       colorPrimary: string;
       algorithm?: boolean;
     };
-  }
+  };
 };
 
 const defaultData: ThemeData = {
   borderRadius: 6,
-  colorPrimary: '#1677ff',
+  colorPrimary: "#1677ff",
   Button: {
-    colorPrimary: '#00B96B',
+    colorPrimary: "#00B96B",
   },
   Modal: {
     Button: {
-      colorPrimary: '#00B96B',
+      colorPrimary: "#00B96B",
     },
-  }
+  },
 };
 
 function App() {

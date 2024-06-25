@@ -9,7 +9,7 @@ import BG_HOME_02 from "../../resources/images/bg/bg_home_02-removebg-preview.pn
 import "./Home.css";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 
-interface IHomeProps { }
+interface IHomeProps {}
 
 function Home(props: IHomeProps) {
   const [spinning, setSpinning] = useState<boolean>(false);
@@ -111,7 +111,6 @@ function Home(props: IHomeProps) {
             >
               <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
             </AutoComplete>
-
           </Col>
         </Row>
 
@@ -120,7 +119,6 @@ function Home(props: IHomeProps) {
             <Flex justify="center" align="center">
               <Image src={BG_HOME_02} preview={false} className="home_container_image" />
             </Flex>
-
           </Col>
         </Row>
 

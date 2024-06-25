@@ -46,7 +46,8 @@ body {
 
 /** BASICS **/
 
-h1 {
+h1,
+p {
   font-family: GameOfThrones;
 }
 
@@ -56,12 +57,11 @@ h2 {
 
 h3,
 h4,
-p,
 span,
 pre,
 div,
 a {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 @media only screen and (min-width: 480px) {
@@ -198,15 +198,15 @@ a {
   padding-top: 50px;
 }
 
-.pt-20{
+.pt-20 {
   padding-top: 20px;
 }
 
-.mb-10{
+.mb-10 {
   margin-bottom: 10px;
 }
 
-.mb-20{
+.mb-20 {
   margin-bottom: 20px;
 }
 
