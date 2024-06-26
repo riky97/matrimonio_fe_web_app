@@ -11,7 +11,7 @@ type ManageHousesProps = {};
 export interface IModalGestione {
     open: boolean;
     record?: HouseDescriptionModel;
-    index?: number
+    index?: number;
 }
 
 function ManageHouses(props: ManageHousesProps) {
@@ -19,7 +19,7 @@ function ManageHouses(props: ManageHousesProps) {
     const [spinning, setSpinning] = useState<boolean>(true);
 
     const [modalPartecipants, setModalPartecipants] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
-    const [modalModifica, setModalModiifica] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
+    const [modalGestioneCasate, setModalGestioneCasate] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
 
     useEffect(() => {
         const fecthInitalData = async () => {
@@ -46,9 +46,9 @@ function ManageHouses(props: ManageHousesProps) {
     }
 
     function onClickOpenModalGestioneCasate(record: HouseDescriptionModel, index: number) {
-        console.log('record', record);
-        console.log('index', index)
-        setModalModiifica({ open: true, record, index })
+        console.log("record", record);
+        console.log("index", index);
+        setModalGestioneCasate({ open: true, record, index });
     }
 
     return (
@@ -69,7 +69,9 @@ function ManageHouses(props: ManageHousesProps) {
                             <Column
                                 title="Partecipanti"
                                 key="partecipants"
-                                render={(_: any, record: HouseDescriptionModel) => <Button onClick={() => onClickPartceipanti(record)}> Visualizza partecipanti</Button>}
+                                render={(_: any, record: HouseDescriptionModel) => (
+                                    <Button onClick={() => onClickPartceipanti(record)}> Visualizza partecipanti</Button>
+                                )}
                             />
                             <Column
                                 title="Action"
@@ -90,14 +92,14 @@ function ManageHouses(props: ManageHousesProps) {
                 </Row>
             </div>
 
-            <ModalGestioneCasate modalGestioneCasate={modalModifica} setModalGestioneCasate={setModalModiifica} />
+            <ModalGestioneCasate modalGestioneCasate={modalGestioneCasate} setModalGestioneCasate={setModalGestioneCasate} />
 
             <Modal
                 title={"Partecipanti al tavolo " + modalPartecipants.record.title}
                 width={1000}
                 centered
                 open={modalPartecipants.open}
-                onOk={() => { }}
+                onOk={() => {}}
                 onCancel={() => setModalPartecipants({ open: false, record: new HouseDescriptionModel() })}
             >
                 <div className="d-flex justify-content-end">

@@ -1,14 +1,14 @@
-import { Button, Form, FormProps, Input, Modal } from 'antd'
-import React, { useEffect } from 'react'
-import { HouseDescriptionModel } from '../../utils/Models';
-import { IModalGestione } from '../../containers/ManageHouses/ManageHouses';
-import { update, } from 'firebase/database';
-import { dbRef } from '../../firebase';
+import { Button, Form, FormProps, Input, Modal } from "antd";
+import React, { useEffect } from "react";
+import { HouseDescriptionModel } from "../../utils/Models";
+import { IModalGestione } from "../../containers/ManageHouses/ManageHouses";
+import { update } from "firebase/database";
+import { dbRef } from "../../firebase";
 
 type Props = {
-    modalGestioneCasate: IModalGestione,
-    setModalGestioneCasate: React.Dispatch<React.SetStateAction<IModalGestione>>
-}
+    modalGestioneCasate: IModalGestione;
+    setModalGestioneCasate: React.Dispatch<React.SetStateAction<IModalGestione>>;
+};
 
 type FieldType = {
     title?: string;
@@ -22,18 +22,18 @@ function ModalGestioneCasate(props: Props) {
         form.setFieldsValue(props.modalGestioneCasate.record);
     }, [form, props.modalGestioneCasate.record]);
 
-    const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
-        console.log('Success:', values);
+    const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+        console.log("Success:", values);
         try {
-            const updates: { [key: string]: any } = {};
+            const updates: { [key: string]: string } = {};
             updates[`/houseDescription/${props.modalGestioneCasate.index}/title`] = values.title;
             updates[`/houseDescription/${props.modalGestioneCasate.index}/description`] = values.description;
             await update(dbRef, updates);
 
-            props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() })
+            props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() });
             modalSuccess();
         } catch (error) {
-            console.log('error', error);
+            console.log("error", error);
         }
     };
 
@@ -41,7 +41,7 @@ function ModalGestioneCasate(props: Props) {
         Modal.success({
             title: `Aggiornamento riuscito`,
             content: "",
-            onOk: () => window.location.reload()
+            onOk: () => window.location.reload(),
         });
     };
     return (
@@ -56,24 +56,25 @@ function ModalGestioneCasate(props: Props) {
             footer={<></>}
         >
             <Form
-                layout={'vertical'}
+                layout={"vertical"}
                 form={form}
                 // initialValues={{ title: props.modalGestioneCasate.record.title, description: props.modalGestioneCasate.record.description }}
-                onFinish={onFinish}            >
+                onFinish={onFinish}
+            >
                 <Form.Item<FieldType> label="Titlo" name="title">
                     <Input />
                 </Form.Item>
                 <Form.Item<FieldType> label="Descrizione" name={"description"}>
                     <Input.TextArea />
                 </Form.Item>
-                <Form.Item className='d-flex justify-content-end'>
+                <Form.Item className="d-flex justify-content-end">
                     <Button type="primary" htmlType="submit">
                         Submit
                     </Button>
                 </Form.Item>
             </Form>
         </Modal>
-    )
+    );
 }
 
-export default ModalGestioneCasate
+export default ModalGestioneCasate;
