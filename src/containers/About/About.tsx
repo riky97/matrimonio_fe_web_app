@@ -1,24 +1,28 @@
 import { Col, Image, Row } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { MockDbHouseDescriptionModel } from "../../utils/Models";
+import { HouseDescriptionModel } from "../../utils/Models";
 import { getHouseByPath } from "../../utils/Functions";
 
 import "./About.css";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 
-interface IAboutProps {}
+interface IAboutProps { }
 
 function About(props: IAboutProps) {
-  const [houseDescription, setHouseDescription] = useState<MockDbHouseDescriptionModel>(new MockDbHouseDescriptionModel());
+  const [houseDescription, setHouseDescription] = useState<HouseDescriptionModel>(new HouseDescriptionModel());
   const location = useLocation();
 
-  useEffect(() => {
-    console.log("location", location);
-    const pathHouse = location.pathname.split("/")[2];
-    console.log("pathHouse", pathHouse);
-    setHouseDescription(getHouseByPath(pathHouse));
-  }, [location]);
+  const [houseFinded, setHouseFinded] = useState<HouseDescriptionModel>(location.state.houseFinded);
+
+  const houseFindedRef = useRef<HouseDescriptionModel>(location.state.houseFinded);
+
+  // useEffect(() => {
+  //   console.log("location", location);
+  //   const pathHouse = location.pathname.split("/")[2];
+  //   console.log("pathHouse", pathHouse);
+  //   setHouseDescription(getHouseByPath(pathHouse));
+  // }, [location]);
 
   return (
     <>
@@ -30,19 +34,19 @@ function About(props: IAboutProps) {
         </Flex> */}
         <Row className="mt-20">
           <Col xs={0} sm={12}>
-            <h1>{houseDescription.title}</h1>
+            <h1>{houseFindedRef.current.title}</h1>
 
-            <p className="mt-50">{houseDescription.description}</p>
+            <p className="mt-50">{houseFindedRef.current.description}</p>
           </Col>
 
           <Col sm={12} className="d-flex justify-content-end">
-            <Image src={houseDescription.image} preview={false} width={500} className="about_container_image" />
+            <Image src={houseFindedRef.current.image} preview={false} width={500} className="about_container_image" />
           </Col>
 
           <Col xs={24} sm={0} className="mt-50">
-            <h1 className="text-align-center">{houseDescription.title}</h1>
+            <h1 className="text-align-center">{houseFindedRef.current.title}</h1>
 
-            <p className="pt-20 about_contaniner--description">{houseDescription.description}</p>
+            <p className="pt-20 about_contaniner--description">{houseFindedRef.current.description}</p>
           </Col>
         </Row>
       </section>

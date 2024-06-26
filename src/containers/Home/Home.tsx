@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { getHouseBySearch } from "../../utils/Functions";
+import React, { useEffect, useState } from "react";
+import { getHouseBySearch, getHouseBySearchInFirebase } from "../../utils/Functions";
 import { AutoComplete, Col, Flex, Image, Input, Modal, Row, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
@@ -7,8 +7,10 @@ import BG_HOME_02 from "../../resources/images/bg/bg_home_02-removebg-preview.pn
 
 import "./Home.css";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
+import { dbRef } from "../../firebase";
+import { child, get, getDatabase, ref } from "firebase/database";
 
-interface IHomeProps {}
+interface IHomeProps { }
 
 function Home(props: IHomeProps) {
   const [spinning, setSpinning] = useState<boolean>(false);
@@ -40,15 +42,28 @@ function Home(props: IHomeProps) {
   //   }, 1000);
   // }
 
-  function onSearchAutoComplete(value: string): void {
+  // useEffect(() => {
+  //   const fecthInitalData = async () => {
+  //     try {
+  //       const data = await get(child(dbRef, `/houseDescription`));
+  //       console.log("data", data.val());
+  //     } catch (error) {
+  //       console.log("error", error);
+  //     }
+  //   };
+
+  //   fecthInitalData();
+  // }, []);
+
+  async function onSearchAutoComplete(value: string) {
     setSpinning(true);
 
-    setTimeout(() => {
-      const houseSearched = getHouseBySearch(value);
+    setTimeout(async () => {
       try {
-        console.log("houseSearched", houseSearched);
-        if (!houseSearched) throw new Error("User not found!");
-        navigate(`/about/${houseSearched.path}`, { state: { user: value } });
+        const houseFinded = await getHouseBySearchInFirebase(value);
+        console.log("houseSearched", houseFinded);
+        if (!houseFinded) throw new Error("User not found!");
+        navigate(`/about/${houseFinded.path}`, { state: { houseFinded: houseFinded, user: value } });
       } catch (error) {
         console.log("error", error);
         modalError();
