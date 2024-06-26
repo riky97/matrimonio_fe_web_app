@@ -22,4 +22,4 @@ const app: FirebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(database);
 
-export { dbRef };
+export { dbRef, database };

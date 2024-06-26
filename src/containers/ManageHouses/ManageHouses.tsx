@@ -1,39 +1,36 @@
-import { Button, Col, Form, Input, List, Modal, Row, Space, Spin, Table } from 'antd'
-import Column from 'antd/es/table/Column';
-import ColumnGroup from 'antd/es/table/ColumnGroup';
-import React, { useEffect, useState } from 'react'
-import { dbRef } from '../../firebase';
-import { child, get } from 'firebase/database';
-import { HouseDescriptionModel } from '../../utils/Models';
-import ModalGestioneCasate from '../../components/ModalGestioneCasate/ModalGestioneCasate';
+import { Button, Col, List, Modal, Row, Space, Spin, Table } from "antd";
+import Column from "antd/es/table/Column";
+import React, { useEffect, useState } from "react";
+import { dbRef } from "../../firebase";
+import { child, get } from "firebase/database";
+import { HouseDescriptionModel } from "../../utils/Models";
+import ModalGestioneCasate from "../../components/ModalGestioneCasate/ModalGestioneCasate";
 
-type ManageHousesProps = {}
+type ManageHousesProps = {};
 
 export interface IModalGestione {
     open: boolean;
-    record?: HouseDescriptionModel
+    record?: HouseDescriptionModel;
+    index?: number
 }
 
 function ManageHouses(props: ManageHousesProps) {
-    const [dataSource, setDataSource] = useState<HouseDescriptionModel[]>([])
+    const [dataSource, setDataSource] = useState<HouseDescriptionModel[]>([]);
     const [spinning, setSpinning] = useState<boolean>(true);
 
     const [modalPartecipants, setModalPartecipants] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
     const [modalModifica, setModalModiifica] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
-
-
 
     useEffect(() => {
         const fecthInitalData = async () => {
             try {
                 const data = await get(child(dbRef, `/houseDescription`));
                 console.log("data", data.val());
-                setDataSource(data.val())
+                setDataSource(data.val());
             } catch (error) {
                 console.log("error", error);
-            }
-            finally {
-                setSpinning(false)
+            } finally {
+                setSpinning(false);
             }
         };
 
@@ -41,24 +38,30 @@ function ManageHouses(props: ManageHousesProps) {
     }, []);
 
     function onClickPartceipanti(record: HouseDescriptionModel) {
-        console.log('record', record)
+        console.log("record", record);
         setModalPartecipants({
             open: true,
-            record
-        })
+            record,
+        });
+    }
+
+    function onClickOpenModalGestioneCasate(record: HouseDescriptionModel, index: number) {
+        console.log('record', record);
+        console.log('index', index)
+        setModalModiifica({ open: true, record, index })
     }
 
     return (
         <>
             <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
             <div style={{ padding: "10px 10px" }}>
-                <Row className='mt-50'>
+                <Row className="mt-50">
                     <Col>
                         <h1 style={{ fontFamily: "sans-serif" }}>Gestione Casate più partecipanti</h1>
                     </Col>
                 </Row>
 
-                <Row className='mt-50 d-flex justify-content-center'>
+                <Row className="mt-50 d-flex justify-content-center">
                     <Col sm={20}>
                         <Table dataSource={dataSource}>
                             <Column title="Titolo" dataIndex="title" key="title" />
@@ -66,17 +69,19 @@ function ManageHouses(props: ManageHousesProps) {
                             <Column
                                 title="Partecipanti"
                                 key="partecipants"
-                                render={(_: any, record: HouseDescriptionModel) => (
-                                    <Button onClick={() => onClickPartceipanti(record)}> Visualizza partecipanti</Button>
-                                )}
+                                render={(_: any, record: HouseDescriptionModel) => <Button onClick={() => onClickPartceipanti(record)}> Visualizza partecipanti</Button>}
                             />
                             <Column
                                 title="Action"
                                 key="action"
-                                render={(_: any, record: HouseDescriptionModel) => (
+                                render={(_: any, record: HouseDescriptionModel, index: number) => (
                                     <Space size="middle">
-                                        <Button type='primary' onClick={() => setModalModiifica({ open: true, record })}> Modifica</Button>
-                                        <Button type='default' danger onClick={() => onClickPartceipanti(record)}> Elimina</Button>
+                                        <Button type="primary" onClick={() => onClickOpenModalGestioneCasate(record, index)}>
+                                            Modifica
+                                        </Button>
+                                        <Button type="default" danger onClick={() => onClickPartceipanti(record)}>
+                                            Elimina
+                                        </Button>
                                     </Space>
                                 )}
                             />
@@ -95,22 +100,22 @@ function ManageHouses(props: ManageHousesProps) {
                 onOk={() => { }}
                 onCancel={() => setModalPartecipants({ open: false, record: new HouseDescriptionModel() })}
             >
+                <div className="d-flex justify-content-end">
+                    <Button>Aggiungi partecipanti</Button>
+                </div>
+
                 <List
                     itemLayout="horizontal"
                     dataSource={modalPartecipants.record.participants}
                     renderItem={(item, index) => (
-                        <List.Item>
-                            <List.Item.Meta
-                                title={<label>{index + 1 + ". " + item.name + " " + item.surname}</label>}
-                            />
+                        <List.Item key={index} actions={[<a>Modifica</a>, <a>Rimuovi</a>]}>
+                            <List.Item.Meta title={<label>{index + 1 + ". " + item.name + " " + item.surname}</label>} />
                         </List.Item>
                     )}
                 />
             </Modal>
-
         </>
-
-    )
+    );
 }
 
-export default ManageHouses
+export default ManageHouses;

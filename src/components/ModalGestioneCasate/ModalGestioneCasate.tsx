@@ -1,7 +1,9 @@
 import { Button, Form, FormProps, Input, Modal } from 'antd'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { HouseDescriptionModel } from '../../utils/Models';
 import { IModalGestione } from '../../containers/ManageHouses/ManageHouses';
+import { update, } from 'firebase/database';
+import { dbRef } from '../../firebase';
 
 type Props = {
     modalGestioneCasate: IModalGestione,
@@ -15,8 +17,32 @@ type FieldType = {
 
 function ModalGestioneCasate(props: Props) {
     const [form] = Form.useForm();
-    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+
+    useEffect(() => {
+        form.setFieldsValue(props.modalGestioneCasate.record);
+    }, [form, props.modalGestioneCasate.record]);
+
+    const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
         console.log('Success:', values);
+        try {
+            const updates: { [key: string]: any } = {};
+            updates[`/houseDescription/${props.modalGestioneCasate.index}/title`] = values.title;
+            updates[`/houseDescription/${props.modalGestioneCasate.index}/description`] = values.description;
+            await update(dbRef, updates);
+
+            props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() })
+            modalSuccess();
+        } catch (error) {
+            console.log('error', error);
+        }
+    };
+
+    const modalSuccess = () => {
+        Modal.success({
+            title: `Aggiornamento riuscito`,
+            content: "",
+            onOk: () => window.location.reload()
+        });
     };
     return (
         <Modal
@@ -25,13 +51,14 @@ function ModalGestioneCasate(props: Props) {
             centered
             open={props.modalGestioneCasate.open}
             onClose={() => props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() })}
-            onOk={() => props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() })}
+            // onOk={() => props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() })}
             onCancel={() => props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() })}
+            footer={<></>}
         >
             <Form
-                layout={'horizontal'}
+                layout={'vertical'}
                 form={form}
-                initialValues={{ title: props.modalGestioneCasate.record.title, description: props.modalGestioneCasate.record.description }}
+                // initialValues={{ title: props.modalGestioneCasate.record.title, description: props.modalGestioneCasate.record.description }}
                 onFinish={onFinish}            >
                 <Form.Item<FieldType> label="Titlo" name="title">
                     <Input />
@@ -39,7 +66,7 @@ function ModalGestioneCasate(props: Props) {
                 <Form.Item<FieldType> label="Descrizione" name={"description"}>
                     <Input.TextArea />
                 </Form.Item>
-                <Form.Item >
+                <Form.Item className='d-flex justify-content-end'>
                     <Button type="primary" htmlType="submit">
                         Submit
                     </Button>
