@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./containers/Home/Home";
 import About from "./containers/About/About";
 import NoMatch from "./containers/NoMatch/NoMatch";
+import ManageHouses from "./containers/ManageHouses/ManageHouses";
 
 // type ThemeData = {
 //   borderRadius: number;
@@ -41,6 +42,7 @@ function App() {
         <Route path="/">
           <Route index element={<Home />} />
           <Route path="about/:tableName" element={<About />} />
+          <Route path="manage/houses" element={<ManageHouses />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
