@@ -1,6 +1,6 @@
 import { DataSnapshot, child, get } from "firebase/database";
 import { MockDbHouseDescriptions } from "./MockDb";
-import { HouseDescriptionModel, ParticipantModel } from "./Models";
+import { AutoCompletePartecipantsModel, HouseDescriptionModel, ParticipantModel } from "./Models";
 import { dbRef } from "../firebase";
 
 export function getHouseBySearch(search: string): HouseDescriptionModel | undefined {
@@ -16,10 +16,14 @@ export function getHouseBySearch(search: string): HouseDescriptionModel | undefi
     return filterElementBySearch[0];
 }
 
-export async function getHouseBySearchInFirebase(search: string): Promise<HouseDescriptionModel | undefined> {
+export async function getHouseDescription(): Promise<HouseDescriptionModel[]> {
     const snapshot: DataSnapshot = await get(child(dbRef, `/houseDescription`));
     const data: HouseDescriptionModel[] = snapshot.val();
-    let filterElementBySearch = data.filter((ele) => {
+    return data;
+}
+
+export function getHouseBySearchInFirebase(search: string, houseDescription: HouseDescriptionModel[]): HouseDescriptionModel | undefined {
+    let filterElementBySearch = houseDescription.filter((ele) => {
         const partecipantFound = findPartecipantBySearch(ele, search);
 
         if (partecipantFound) {
@@ -41,4 +45,18 @@ function findPartecipantBySearch(ele: HouseDescriptionModel, search: string): Pa
 
 export function getHouseByPath(path: string): HouseDescriptionModel {
     return MockDbHouseDescriptions.find((x) => x.path === path);
+}
+
+export function getAllPartecipants(houseDescription: HouseDescriptionModel[]): AutoCompletePartecipantsModel[] {
+    const allPartecipants: AutoCompletePartecipantsModel[] = houseDescription.map((x) => {
+        const partecipants = x.participants;
+
+        for (const element of partecipants) {
+            return {
+                value: `${element.name} ${element.surname}`,
+            };
+        }
+    });
+
+    return [...new Map(allPartecipants.map((item) => [item.value, item])).values()];
 }

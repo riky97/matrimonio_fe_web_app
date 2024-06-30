@@ -1,13 +1,13 @@
 .home_container {
-  background: url("../../resources/images/bg/bg_home_03.jpg");
-  height: 100vh;
-  width: auto;
-  position: relative;
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background: url("../../resources/images/bg/bg_home_03.jpg");
+    height: 100vh;
+    width: auto;
+    position: relative;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 /* .home_container_image {
@@ -15,11 +15,11 @@
 } */
 
 .home_container_searchBar .ant-input-affix-wrapper {
-  border-start-start-radius: 30px !important;
-  border-end-start-radius: 30px !important;
+    border-start-start-radius: 30px !important;
+    border-end-start-radius: 30px !important;
 }
 
 .home_container_searchBar button {
-  border-start-end-radius: 30px !important;
-  border-end-end-radius: 30px !important;
+    border-start-end-radius: 30px !important;
+    border-end-end-radius: 30px !important;
 }
