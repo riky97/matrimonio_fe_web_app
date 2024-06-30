@@ -110,7 +110,7 @@ function ManageHouses(props: ManageHousesProps) {
                     itemLayout="horizontal"
                     dataSource={modalPartecipants.record.participants}
                     renderItem={(item, index) => (
-                        <List.Item key={index} actions={[<a>Modifica</a>, <a>Rimuovi</a>]}>
+                        <List.Item key={index} actions={[<a href="/">Modifica</a>, <a href="/">Rimuovi</a>]}>
                             <List.Item.Meta title={<label>{index + 1 + ". " + item.name + " " + item.surname}</label>} />
                         </List.Item>
                     )}

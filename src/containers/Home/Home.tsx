@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllPartecipants, getHouseBySearch, getHouseBySearchInFirebase, getHouseDescription } from "../../utils/Functions";
+import { getAllPartecipants, getHouseBySearchInFirebase, getHouseDescription } from "../../utils/Functions";
 import { AutoComplete, Col, Flex, Image, Input, Modal, Row, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
