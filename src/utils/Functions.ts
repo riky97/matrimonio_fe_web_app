@@ -48,15 +48,10 @@ export function getHouseByPath(path: string): HouseDescriptionModel {
 }
 
 export function getAllPartecipants(houseDescription: HouseDescriptionModel[]): AutoCompletePartecipantsModel[] {
-    const allPartecipants: AutoCompletePartecipantsModel[] = houseDescription.map((x) => {
-        const partecipants = x.participants;
-
-        for (const element of partecipants) {
-            return {
-                value: `${element.name} ${element.surname}`,
-            };
-        }
-    });
-
+    const allPartecipants: AutoCompletePartecipantsModel[] = houseDescription.flatMap((item) =>
+        item.participants.map((innerItem) => ({
+            value: `${innerItem.name} ${innerItem.surname}`,
+        }))
+    );
     return [...new Map(allPartecipants.map((item) => [item.value, item])).values()];
 }

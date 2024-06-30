@@ -25,7 +25,6 @@ function ManageHouses(props: ManageHousesProps) {
         const fecthInitalData = async () => {
             try {
                 const data = await get(child(dbRef, `/houseDescription`));
-                console.log("data", data.val());
                 setDataSource(data.val());
             } catch (error) {
                 console.log("error", error);
@@ -38,7 +37,6 @@ function ManageHouses(props: ManageHousesProps) {
     }, []);
 
     function onClickPartceipanti(record: HouseDescriptionModel) {
-        console.log("record", record);
         setModalPartecipants({
             open: true,
             record,
@@ -46,8 +44,6 @@ function ManageHouses(props: ManageHousesProps) {
     }
 
     function onClickOpenModalGestioneCasate(record: HouseDescriptionModel, index: number) {
-        console.log("record", record);
-        console.log("index", index);
         setModalGestioneCasate({ open: true, record, index });
     }
 

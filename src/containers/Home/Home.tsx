@@ -47,7 +47,6 @@ function Home(props: IHomeProps) {
         setTimeout(() => {
             try {
                 const houseFinded = getHouseBySearchInFirebase(value, houseDescription);
-                console.log("houseSearched", houseFinded);
                 if (!houseFinded) throw new Error("User not found!");
                 navigate(`/about/${houseFinded.path}`, { state: { houseFinded: houseFinded, user: value } });
             } catch (error) {

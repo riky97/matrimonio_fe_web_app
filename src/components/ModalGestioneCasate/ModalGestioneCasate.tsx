@@ -23,7 +23,6 @@ function ModalGestioneCasate(props: Props) {
     }, [form, props.modalGestioneCasate.record]);
 
     const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-        console.log("Success:", values);
         try {
             const updates: { [key: string]: string } = {};
             updates[`/houseDescription/${props.modalGestioneCasate.index}/title`] = values.title;
