@@ -1,39 +1,45 @@
-import { Col, Image, Row } from "antd";
-import React, { useRef } from "react";
+import { Button, Col, Image, Row } from "antd";
+import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { HouseDescriptionModel } from "../../utils/Models";
 
 import "./About.css";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 
-interface IAboutProps {}
+interface IAboutProps { }
 
 function About(props: IAboutProps) {
     const location = useLocation();
     const houseFindedRef = useRef<HouseDescriptionModel>(location.state.houseFinded);
 
+    const containerImageRef = useRef<HTMLDivElement>(null);
+    const containerDescriptionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        // console.log('containerImageRef', containerImageRef.current.offsetHeight)
+        // containerDescriptionRef.current.style.top = `${containerImageRef.current.offsetHeight - 20}px`;
+    }, [])
+
+
     return (
         <>
-            <section className="about_container" style={{ padding: "10px 10px" }}>
-                <Row className="mt-20">
-                    <Col xs={0} sm={12}>
-                        <h1>{houseFindedRef.current.title}</h1>
-
-                        <p className="mt-50">{houseFindedRef.current.description}</p>
+            <section className="about_container" >
+                <ArrowLeftOutlined style={{ paddingLeft: 20, paddingTop: 20, color: "#fff", fontSize: 20 }} onClick={() => window.open("/", "_self")} />
+                <Row ref={containerImageRef}>
+                    <Col xs={24} sm={0}>
+                        <Image src={houseFindedRef.current.image} preview={false} className="about_container_image" />
                     </Col>
+                </Row>
+                <Row ref={containerDescriptionRef} className="about_container_all">
+                    <Col xs={24} sm={0}>
+                        <h3 className="about_contaniner--title">{houseFindedRef.current.title}</h3>
 
-                    <Col sm={12} className="d-flex justify-content-end">
-                        <Image src={houseFindedRef.current.image} preview={false} width={500} className="about_container_image" />
-                    </Col>
-
-                    <Col xs={24} sm={0} className="mt-50">
-                        <h1 className="text-align-center">{houseFindedRef.current.title}</h1>
-
-                        <p className="pt-20 about_contaniner--description">{houseFindedRef.current.description}</p>
+                        <div className="about_contaniner--description">{houseFindedRef.current.description}</div>
                     </Col>
                 </Row>
             </section>
-            <BottomNavbar />
+            {/* <BottomNavbar /> */}
         </>
     );
 }

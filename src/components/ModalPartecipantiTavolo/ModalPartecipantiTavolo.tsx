@@ -84,7 +84,8 @@ function ModalPartecipantiTavolo(props: ModalPartecipantiTavoloProps) {
                                     Modal.info({
                                         title: `Sei sicuro di voler eliminare l'utente ${item.name} ${item.surname}`,
                                         content: "",
-                                        onOk: () => deleteParticipantFromHouses(item, index)
+                                        onOk: () => deleteParticipantFromHouses(item, index),
+                                        maskClosable: true,
                                     })
                                 }
 

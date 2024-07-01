@@ -1,19 +1,42 @@
 .about_container {
-    background: url("../../resources/images/bg/bg_home_03.jpg");
+    /* background: url("../../resources/images/bg/bg_home_03.jpg");
     height: 100vh;
-    width: 100%;
+    width: 100%; */
     /* Position and center the image to scale nicely on all screens */
-    background-position: center;
+    /* background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
+    background-color: #07144B;
+    height: 100vh;
+    width: 100%; 
 }
 
 .about_container_image {
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    /* height: 36vh !important;
+    width: 100vw !important; */
+    /* position: relative; */
+}
+
+.about_contaniner--title{
+    font-size: 20px;
 }
 
 .about_contaniner--description {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-weight: 500;
+    white-space: pre-line;
+    line-height: 1.4em;
+    padding-top: 10px;
+}
+
+.about_container_all{
+    /* position: absolute; */
+    padding: 20px 20px;
+    background: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 100%;
+
 }
