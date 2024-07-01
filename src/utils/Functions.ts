@@ -2,6 +2,7 @@ import { DataSnapshot, child, get } from "firebase/database";
 import { MockDbHouseDescriptions } from "./MockDb";
 import { AutoCompletePartecipantsModel, HouseDescriptionModel, ParticipantModel } from "./Models";
 import { dbRef } from "../firebase";
+import { Modal, ModalFuncProps } from "antd";
 
 export function getHouseBySearch(search: string): HouseDescriptionModel | undefined {
     let filterElementBySearch = MockDbHouseDescriptions.filter((ele) => {
@@ -55,3 +56,12 @@ export function getAllPartecipants(houseDescription: HouseDescriptionModel[]): A
     );
     return [...new Map(allPartecipants.map((item) => [item.value, item])).values()];
 }
+
+
+export const modalSuccess = (props: ModalFuncProps) => {
+    Modal.success(props);
+};
+
+export const modalError = (props: ModalFuncProps) => {
+    Modal.error(props);
+};

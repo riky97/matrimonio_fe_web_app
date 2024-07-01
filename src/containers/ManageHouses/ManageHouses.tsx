@@ -1,10 +1,11 @@
-import { Button, Col, List, Modal, Row, Space, Spin, Table } from "antd";
+import { Button, Col, Row, Space, Spin, Table } from "antd";
 import Column from "antd/es/table/Column";
 import React, { useEffect, useState } from "react";
 import { dbRef } from "../../firebase";
 import { child, get } from "firebase/database";
 import { HouseDescriptionModel } from "../../utils/Models";
 import ModalGestioneCasate from "../../components/ModalGestioneCasate/ModalGestioneCasate";
+import ModalPartecipantiTavolo from "../../components/ModalPartecipantiTavolo/ModalPartecipantiTavolo";
 
 type ManageHousesProps = {};
 
@@ -36,10 +37,11 @@ function ManageHouses(props: ManageHousesProps) {
         fecthInitalData();
     }, []);
 
-    function onClickPartceipanti(record: HouseDescriptionModel) {
+    function onClickPartceipanti(record: HouseDescriptionModel, index: number) {
         setModalPartecipants({
             open: true,
             record,
+            index
         });
     }
 
@@ -65,8 +67,8 @@ function ManageHouses(props: ManageHousesProps) {
                             <Column
                                 title="Partecipanti"
                                 key="partecipants"
-                                render={(_: any, record: HouseDescriptionModel) => (
-                                    <Button onClick={() => onClickPartceipanti(record)}> Visualizza partecipanti</Button>
+                                render={(_: any, record: HouseDescriptionModel, index: number) => (
+                                    <Button onClick={() => onClickPartceipanti(record, index)}> Visualizza partecipanti</Button>
                                 )}
                             />
                             <Column
@@ -76,9 +78,6 @@ function ManageHouses(props: ManageHousesProps) {
                                     <Space size="middle">
                                         <Button type="primary" onClick={() => onClickOpenModalGestioneCasate(record, index)}>
                                             Modifica
-                                        </Button>
-                                        <Button type="default" danger onClick={() => onClickPartceipanti(record)}>
-                                            Elimina
                                         </Button>
                                     </Space>
                                 )}
@@ -90,28 +89,7 @@ function ManageHouses(props: ManageHousesProps) {
 
             <ModalGestioneCasate modalGestioneCasate={modalGestioneCasate} setModalGestioneCasate={setModalGestioneCasate} />
 
-            <Modal
-                title={"Partecipanti al tavolo " + modalPartecipants.record.title}
-                width={1000}
-                centered
-                open={modalPartecipants.open}
-                onOk={() => {}}
-                onCancel={() => setModalPartecipants({ open: false, record: new HouseDescriptionModel() })}
-            >
-                <div className="d-flex justify-content-end">
-                    <Button>Aggiungi partecipanti</Button>
-                </div>
-
-                <List
-                    itemLayout="horizontal"
-                    dataSource={modalPartecipants.record.participants}
-                    renderItem={(item, index) => (
-                        <List.Item key={index} actions={[<a href="/">Modifica</a>, <a href="/">Rimuovi</a>]}>
-                            <List.Item.Meta title={<label>{index + 1 + ". " + item.name + " " + item.surname}</label>} />
-                        </List.Item>
-                    )}
-                />
-            </Modal>
+            <ModalPartecipantiTavolo modalPartecipants={modalPartecipants} setModalPartecipants={setModalPartecipants} />
         </>
     );
 }

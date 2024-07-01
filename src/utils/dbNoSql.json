@@ -3,7 +3,7 @@
         {
             "id": 0,
             "title": "House Tyrell",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu eros in nisl porta suscipit eget eu risus. Etiam efficitur enim sed tellus pharetra, quis vestibulum nisi hendrerit. Etiam rhoncus tortor vitae nisl vulputate, ac fringilla magna pellentesque. Maecenas bibendum odio eget leo dapibus, vel congue ante rhoncus. Sed lobortis ornare ligula, et rutrum quam laoreet in. Cras elit nibh, pellentesque sit amet gravida non, auctor eget odio. Ut sit amet nisi laoreet, gravida lorem sit amet, pretium mauris. Aenean a tincidunt justo, in porttitor risus. Integer porttitor tristique finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris at eros mollis, blandit est ac, placerat neque. Mauris et sollicitudin purus, eget viverra ipsum.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTyrell.jpg?alt=media&token=5ff9abaa-7dbd-4d1c-a5a5-5eef9d944357",
             "path": "house-tyrell",
             "participants": [

@@ -4,6 +4,7 @@ import { HouseDescriptionModel } from "../../utils/Models";
 import { IModalGestione } from "../../containers/ManageHouses/ManageHouses";
 import { update } from "firebase/database";
 import { dbRef } from "../../firebase";
+import { modalSuccess } from "../../utils/Functions";
 
 type Props = {
     modalGestioneCasate: IModalGestione;
@@ -30,18 +31,15 @@ function ModalGestioneCasate(props: Props) {
             await update(dbRef, updates);
 
             props.setModalGestioneCasate({ open: false, record: new HouseDescriptionModel() });
-            modalSuccess();
+
+            modalSuccess({
+                title: `Aggiornamento riuscito`,
+                content: "",
+                onOk: () => window.location.reload(),
+            });
         } catch (error) {
             console.log("error", error);
         }
-    };
-
-    const modalSuccess = () => {
-        Modal.success({
-            title: `Aggiornamento riuscito`,
-            content: "",
-            onOk: () => window.location.reload(),
-        });
     };
     return (
         <Modal
