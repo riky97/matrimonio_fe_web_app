@@ -34,6 +34,27 @@
   src: url("./resources/fonts/Augusta-Shadow.ttf");
 }
 
+/* @font-face {
+  font-family: GothicA1-Bold;
+  src: url("./resources/fonts/Gothic_A1/GothicA1-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: GothicA1-Regular;
+  src: url("./resources/fonts/Gothic_A1/GothicA1-Regular.ttf");
+} */
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url("./resources/fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url("./resources/fonts/Montserrat-Regular.ttf");
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -46,22 +67,13 @@ body {
 
 /** BASICS **/
 
-h1,
-p {
-  font-family: GameOfThrones;
+h1,h2, h3, h4,h5, h6 {
+  font-family:  Montserrat-ExtraBold !important;
 }
 
-h2 {
-  font-family: GameOfThrones;
-}
+span, p, pre, a , div {
+  font-family: Montserrat-Regular !important;
 
-h3,
-h4,
-span,
-pre,
-div,
-a {
-  font-family: "Times New Roman", Times, serif;
 }
 
 @media only screen and (min-width: 480px) {

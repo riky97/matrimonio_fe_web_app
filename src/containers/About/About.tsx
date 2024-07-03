@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { HouseDescriptionModel } from "../../utils/Models";
 
+import HouseTyrell2 from "../../resources/images/house/new/HouseGreyjoy2.jpg"
+
 import "./About.css";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import { ArrowLeftOutlined } from "@ant-design/icons";
@@ -25,10 +27,10 @@ function About(props: IAboutProps) {
     return (
         <>
             <section className="about_container" >
-                <ArrowLeftOutlined style={{ paddingLeft: 20, paddingTop: 20, color: "#fff", fontSize: 20 }} onClick={() => window.open("/", "_self")} />
+                <ArrowLeftOutlined className="back-icon" onClick={() => window.open("/", "_self")} />
                 <Row ref={containerImageRef}>
                     <Col xs={24} sm={0}>
-                        <Image src={houseFindedRef.current.image} preview={false} className="about_container_image" />
+                        <Image src={HouseTyrell2} preview={false} className="about_container_image" />
                     </Col>
                 </Row>
                 <Row ref={containerDescriptionRef} className="about_container_all">
