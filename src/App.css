@@ -25,13 +25,13 @@
 }
 
 .back-icon{
-    margin: 10px 10px 0;
     border: 1px solid rgba(225, 225, 225, 0.8);
     padding: 6px;
     border-radius: 100%;
     color: rgb(255, 255, 255);
     font-size: 20px;
     top: 10px;
+    left: 10px;
     z-index: 1000000;
     position: absolute;
     background: rgba(225, 225, 225, 0.8);
