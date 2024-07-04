@@ -1,10 +1,11 @@
 import { Avatar, Col, Image, List, Row } from "antd";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { HouseDescriptionModel, ParticipantModel } from "../../utils/Models";
 
 import "./About.css";
 import { ArrowLeftOutlined } from "@ant-design/icons";
+import { array_move, randomIntFromInterval } from "../../utils/Functions";
 
 interface IAboutProps { }
 
@@ -16,18 +17,34 @@ function About(props: IAboutProps) {
     const containerImageRef = useRef<HTMLDivElement>(null);
     const containerDescriptionRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        // console.log('containerImageRef', containerImageRef.current.offsetHeight)
-        // containerDescriptionRef.current.style.top = `${containerImageRef.current.offsetHeight - 20}px`;
-    }, [])
+    function moveSearchedUserToTopPosition(partecipants: ParticipantModel[]): ParticipantModel[] {
+        if (userSearchedRef.current) {
+            const indexFinded: number = partecipants.findIndex((x) => {
+                const user = (x.name + x.surname).toLowerCase();
+                const searchedUser = userSearchedRef.current.replace(/\s/g, "").toLowerCase();
+                return user === searchedUser;
+            });
 
-    // function orderToTopUserSearched(partecipants:  ParticipantModel[]) :  ParticipantModel[]{
+            return array_move(partecipants, indexFinded, 0);
+        }
 
-    // }
+        return partecipants;
+    }
+
+    function getRandomBgColorForPartecipants() {
+        const bgColor: React.CSSProperties[] = [
+            { backgroundColor: "rgba(45,86,160, 0.2)", color: "#2D56A0" },
+            { backgroundColor: "rgba(24,109,26, 0.2)", color: "#186D1A" },
+            { backgroundColor: "rgba(254,204,28, 0.2)", color: "#FECC1C" },
+            { backgroundColor: "rgba(142,30,21, 0.2)", color: "#8E1E15" },
+        ];
+
+        return bgColor[randomIntFromInterval(0, bgColor.length - 1)];
+    }
 
     return (
         <>
-            <section className="about_container" >
+            <section className="about_container">
                 <ArrowLeftOutlined className="back-icon" onClick={() => window.open("/", "_self")} />
                 <Row ref={containerImageRef}>
                     <Col xs={24} sm={0}>
@@ -41,17 +58,22 @@ function About(props: IAboutProps) {
                         <div className="about_contaniner--description">{houseFindedRef.current.description}</div>
                     </Col>
 
-                    <Col xs={24} sm={0} className="mt-50">
-                        <h3 className="about_contaniner--title mb-10">Partecipanti</h3>
+                    <Col xs={24} sm={0} style={{ marginTop: 30 }}>
+                        <h3 className="about_contaniner--title mb-10 text-align-center">Partecipanti al tavolo</h3>
 
                         <List
                             itemLayout="horizontal"
-                            dataSource={houseFindedRef.current.participants}
+                            dataSource={moveSearchedUserToTopPosition(houseFindedRef.current.participants)}
                             renderItem={(item, index) => (
                                 <List.Item>
                                     <List.Item.Meta
-                                        avatar={<div style={{ display: "grid", placeItems: "center", width: 30, height: 30, borderRadius: "100%", background: "#186D1A", color: "#fff" }}>{index + 1}</div>}
-                                        title={item.name + " " + item.surname}
+                                        style={{ alignItems: "center" }}
+                                        avatar={
+                                            <Avatar size="default" style={getRandomBgColorForPartecipants()}>
+                                                {item.name.charAt(0)}
+                                            </Avatar>
+                                        }
+                                        title={<b>{item.name + " " + item.surname}</b>}
                                     />
                                 </List.Item>
                             )}

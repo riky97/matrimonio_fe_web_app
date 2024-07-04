@@ -52,8 +52,9 @@ function ManageHouses(props: ManageHousesProps) {
     return (
         <>
             <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
+            <Button style={{ margin: "30px 20px 0" }} type="primary" onClick={() => window.open("/", "_self")}>Torna alla home</Button>
             <div style={{ padding: "10px 10px" }}>
-                <Row className="mt-50">
+                <Row className="mt-20">
                     <Col>
                         <h1 style={{ fontFamily: "sans-serif" }}>Gestione Casate più partecipanti</h1>
                     </Col>
