@@ -32,11 +32,19 @@ function About(props: IAboutProps) {
     }
 
     function getRandomBgColorForPartecipants() {
+        const t = ["#f7941e", "#f15a29", "#ed1c24", "#9e1f63", "#006838", "#d7df23", "#fff200", "#fbb040", "#939598"]
+
+        // return { color: t[randomIntFromInterval(0, t.length - 1)] }
         const bgColor: React.CSSProperties[] = [
-            { backgroundColor: "rgba(45,86,160, 0.2)", color: "#2D56A0" },
-            { backgroundColor: "rgba(24,109,26, 0.2)", color: "#186D1A" },
-            { backgroundColor: "rgba(254,204,28, 0.2)", color: "#FECC1C" },
-            { backgroundColor: "rgba(142,30,21, 0.2)", color: "#8E1E15" },
+            { backgroundColor: "rgb(247, 148, 30 , 0.2)", color: "#f7941e" },
+            { backgroundColor: "rgba(241, 90, 41, 0.2)", color: "#f15a29" },
+            { backgroundColor: "rgba(237, 28, 36, 0.2)", color: "#ed1c24" },
+            { backgroundColor: "rgba(158, 31, 99, 0.2)", color: "#9e1f63" },
+            { backgroundColor: "rgba(0, 104, 56, 0.2)", color: "#006838" },
+            { backgroundColor: "rgba(215, 223, 35, 0.2)", color: "#d7df23" },
+            { backgroundColor: "rgba(255, 242, 0, 0.2)", color: "#fff200" },
+            { backgroundColor: "rgba(251, 176, 64, 0.2)", color: "#fbb040" },
+            { backgroundColor: "rgba(147, 149, 152, 0.2)", color: "#939598" },
         ];
 
         return bgColor[randomIntFromInterval(0, bgColor.length - 1)];

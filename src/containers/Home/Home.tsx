@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllPartecipants, getHouseBySearchInFirebase, getHouseDescription } from "../../utils/Functions";
+import { getAllPartecipants, getHouseBySearchInFirebase, getHouseDescription, randomIntFromInterval } from "../../utils/Functions";
 import { AutoComplete, Card, Col, Flex, Image, Input, Modal, Row, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
@@ -66,6 +66,11 @@ function Home(props: IHomeProps) {
             navigate(`/about/${ele.path}`, { state: { houseFinded: ele } });
         }, 1000);
     }
+
+    // function getBg (){
+    //     const t = ["#f7941e", "#f15a29", "#ed1c24", "#9e1f63", "#006838", "#d7df23", "#fff200", "#fbb040", "#939598"];
+    //     return t[randomIntFromInterval(0, t.length -1)]
+    // }
 
     return (
         <>
