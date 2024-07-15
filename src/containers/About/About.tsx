@@ -6,6 +6,7 @@ import { HouseDescriptionModel, ParticipantModel } from "../../utils/Models";
 import "./About.css";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { array_move, randomIntFromInterval } from "../../utils/Functions";
+import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
 interface IAboutProps { }
 
@@ -32,9 +33,6 @@ function About(props: IAboutProps) {
     }
 
     function getRandomBgColorForPartecipants() {
-        const t = ["#f7941e", "#f15a29", "#ed1c24", "#9e1f63", "#006838", "#d7df23", "#fff200", "#fbb040", "#939598"]
-
-        // return { color: t[randomIntFromInterval(0, t.length - 1)] }
         const bgColor: React.CSSProperties[] = [
             { backgroundColor: "rgb(247, 148, 30 , 0.2)", color: "#f7941e" },
             { backgroundColor: "rgba(241, 90, 41, 0.2)", color: "#f15a29" },
@@ -52,6 +50,7 @@ function About(props: IAboutProps) {
 
     return (
         <>
+            <Snowflakes />
             <section className="about_container">
                 <ArrowLeftOutlined className="back-icon" onClick={() => window.open("/", "_self")} />
                 <Row ref={containerImageRef}>

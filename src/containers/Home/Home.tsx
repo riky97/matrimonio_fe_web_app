@@ -8,8 +8,9 @@ import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import { AutoCompletePartecipantsModel, HouseDescriptionModel } from "../../utils/Models";
 import Meta from "antd/es/card/Meta";
 import { useWindowDimensions } from "../../hooks/Hooks";
+import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
-interface IHomeProps {}
+interface IHomeProps { }
 
 function Home(props: IHomeProps) {
     const [spinning, setSpinning] = useState<boolean>(false);
@@ -69,6 +70,7 @@ function Home(props: IHomeProps) {
 
     return (
         <>
+            <Snowflakes />
             <div className="home_container">
                 <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
 
