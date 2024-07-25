@@ -38,7 +38,7 @@ export function getHouseBySearchInFirebase(search: string, houseDescription: Hou
 
 function findPartecipantBySearch(ele: HouseDescriptionModel, search: string): ParticipantModel {
     const findPartecipant = ele.participants.find((x) => {
-        let completeName = x.name.toUpperCase() + x.surname.toUpperCase();
+        let completeName = x.name.replace(/\s/g, "").toUpperCase() + x.surname.replace(/\s/g, "").toUpperCase();
         return completeName === search.replace(/\s/g, "").toUpperCase();
     });
     return findPartecipant;

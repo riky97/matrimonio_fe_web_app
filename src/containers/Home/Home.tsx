@@ -101,9 +101,8 @@ function Home(props: IHomeProps) {
                         <div style={{ marginTop: 20 }}>
                             <AutoComplete
                                 style={{ width: "100%" }}
-                                options={allPartecipants.slice(0, 5)}
+                                options={allPartecipants}
                                 onSelect={onSearchAutoComplete}
-                                // size={"large"}
                                 filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
                                 className="home_container_searchBar"
                             >
