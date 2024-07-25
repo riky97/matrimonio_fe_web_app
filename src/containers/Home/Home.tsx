@@ -68,14 +68,24 @@ function Home(props: IHomeProps) {
         }, 1000);
     }
 
+    function getPaddingByWidth(): number {
+        if (width >= 768 && width < 1200) {
+            return 100
+        } else if (width >= 1200) {
+            return 200
+        } else {
+            return 20
+        }
+    }
+
     return (
         <>
             <Snowflakes />
             <div className="home_container">
                 <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
 
-                <Row style={{ padding: "20px 20px", background: "#8199F4", color: "white", borderBottomRightRadius: 25, borderBottomLeftRadius: 25 }}>
-                    <Col>
+                <Row style={{ padding: "20px 0", paddingLeft: getPaddingByWidth(), paddingRight: getPaddingByWidth(), background: "#8199F4", color: "white", borderBottomRightRadius: 25, borderBottomLeftRadius: 25 }}>
+                    <Col xs={24} >
                         <h2>Ciao &#128075;</h2>
 
                         <div style={{ marginTop: 10 }}>
@@ -87,23 +97,27 @@ function Home(props: IHomeProps) {
                             <br />
                             <h4>Buon Proseguimento ! &#127881;</h4>
                         </div>
+
+                        <div style={{ marginTop: 20 }}>
+                            <AutoComplete
+                                style={{ width: "100%" }}
+                                options={allPartecipants.slice(0, 5)}
+                                onSelect={onSearchAutoComplete}
+                                // size={"large"}
+                                filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+                                className="home_container_searchBar"
+                            >
+                                <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
+                            </AutoComplete>
+                        </div>
                     </Col>
 
-                    <Col style={{ marginTop: 20 }} xs={24} sm={24}>
-                        <AutoComplete
-                            style={{ width: "100%" }}
-                            options={allPartecipants.slice(0, 5)}
-                            onSelect={onSearchAutoComplete}
-                            // size={"large"}
-                            filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
-                            className="home_container_searchBar"
-                        >
-                            <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
-                        </AutoComplete>
-                    </Col>
+                    {/* <Col  xs={24} sm={24} md={12}>
+                        
+                    </Col> */}
                 </Row>
 
-                <Row className="mt-20" style={{ padding: "20px 20px" }}>
+                <Row className="mt-20" style={{ padding: "20px 0", paddingLeft: getPaddingByWidth(), paddingRight: getPaddingByWidth() }}>
                     <Col xs={24} sm={24}>
                         <h2 className="text-align-center mb-20" style={{ textTransform: "uppercase" }}>
                             Scopri le casate
@@ -113,7 +127,7 @@ function Home(props: IHomeProps) {
                     <Row gutter={10}>
                         {houseDescription.map((ele, index) => {
                             return (
-                                <Col key={index} xs={12} sm={12} className="mb-20 d-flex justify-content-center">
+                                <Col key={index} xs={12} sm={12} md={12} lg={8} className="mb-20 d-flex justify-content-center">
                                     <Card
                                         hoverable
                                         style={{}}
