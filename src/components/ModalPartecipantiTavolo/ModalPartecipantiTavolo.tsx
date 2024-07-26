@@ -36,6 +36,13 @@ function ModalPartecipantiTavolo(props: ModalPartecipantiTavoloProps) {
 
     async function deleteParticipantFromHouses(item: ParticipantModel, index: number) {
         try {
+            if (props.modalPartecipants.record.participants.length === 1) {
+                return modalError({
+                    title: `Eliminazione non riuscita`,
+                    content: "Non puoi eliminare se c'è un solo partecipante. Modfica questo partecipante oppure aggiungine un altro e infine rimuovi questo",
+                });
+            }
+
             const snapshot: DataSnapshot = await get(child(dbRef, `/houseDescription/${props.modalPartecipants.index}/participants`));
             let data: ParticipantModel[] = snapshot.val();
             data.splice(index, 1);
