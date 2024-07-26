@@ -3,7 +3,7 @@ import Column from "antd/es/table/Column";
 import React, { useEffect, useState } from "react";
 import { dbRef } from "../../firebase";
 import { child, get } from "firebase/database";
-import { HouseDescriptionModel } from "../../utils/Models";
+import { HouseDescriptionModel, ParticipantModel } from "../../utils/Models";
 import ModalGestioneCasate from "../../components/ModalGestioneCasate/ModalGestioneCasate";
 import ModalPartecipantiTavolo from "../../components/ModalPartecipantiTavolo/ModalPartecipantiTavolo";
 
@@ -13,6 +13,7 @@ export interface IModalGestione {
     open: boolean;
     record?: HouseDescriptionModel;
     index?: number;
+    item?: ParticipantModel
 }
 
 function ManageHouses(props: ManageHousesProps) {
@@ -62,7 +63,7 @@ function ManageHouses(props: ManageHousesProps) {
 
                 <Row className="mt-50 d-flex justify-content-center">
                     <Col sm={20}>
-                        <Table dataSource={dataSource}>
+                        <Table dataSource={dataSource} pagination={{ pageSize: dataSource.length }}>
                             <Column title="Titolo" dataIndex="title" key="title" />
                             <Column title="Descrizione" dataIndex="description" key="description" />
                             <Column
@@ -91,6 +92,7 @@ function ManageHouses(props: ManageHousesProps) {
             <ModalGestioneCasate modalGestioneCasate={modalGestioneCasate} setModalGestioneCasate={setModalGestioneCasate} />
 
             <ModalPartecipantiTavolo modalPartecipants={modalPartecipants} setModalPartecipants={setModalPartecipants} />
+
         </>
     );
 }

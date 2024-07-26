@@ -4,7 +4,7 @@ export class IGetWindowDimension {
 }
 
 export class HouseDescriptionModel {
-    id: number;
+    key: number;
     title: string;
     description: string;
     image: string;

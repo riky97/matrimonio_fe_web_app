@@ -6,6 +6,7 @@ import { DataSnapshot, child, get, update } from "firebase/database";
 import { dbRef } from "../../firebase";
 import ModalAggiungiPartecipanti from "./ModalAggiungiPartecipanti";
 import { modalError, modalSuccess } from "../../utils/Functions";
+import ModalModficaPartecipanti from "./ModalModficaPartecipanti";
 
 type ModalPartecipantiTavoloProps = {
     modalPartecipants: IModalGestione;
@@ -15,7 +16,6 @@ type ModalPartecipantiTavoloProps = {
 function ModalPartecipantiTavolo(props: ModalPartecipantiTavoloProps) {
     const [modalAggiungiPartecipanti, setModalAggiungiPartecipanti] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
     const [modalModificaPartecipanti, setModalModificaPartecipanti] = useState<IModalGestione>({ open: false, record: new HouseDescriptionModel() });
-
 
     function openModalAddParticipantsInHouses(index: number) {
         setModalAggiungiPartecipanti({
@@ -29,6 +29,7 @@ function ModalPartecipantiTavolo(props: ModalPartecipantiTavoloProps) {
         setModalModificaPartecipanti({
             index,
             open: true,
+            item,
             record: props.modalPartecipants.record,
         });
     }
@@ -80,16 +81,18 @@ function ModalPartecipantiTavolo(props: ModalPartecipantiTavoloProps) {
                                 <Button type="primary" onClick={() => openModalModificaParticipant(item, index)}>
                                     Modifica
                                 </Button>,
-                                <Button type="default" danger onClick={() => {
-                                    Modal.info({
-                                        title: `Sei sicuro di voler eliminare l'utente ${item.name} ${item.surname}`,
-                                        content: "",
-                                        onOk: () => deleteParticipantFromHouses(item, index),
-                                        maskClosable: true,
-                                    })
-                                }
-
-                                } >
+                                <Button
+                                    type="default"
+                                    danger
+                                    onClick={() => {
+                                        Modal.info({
+                                            title: `Sei sicuro di voler eliminare l'utente ${item.name} ${item.surname}`,
+                                            content: "",
+                                            onOk: () => deleteParticipantFromHouses(item, index),
+                                            maskClosable: true,
+                                        });
+                                    }}
+                                >
                                     Elimina
                                 </Button>,
                             ]}
@@ -101,6 +104,8 @@ function ModalPartecipantiTavolo(props: ModalPartecipantiTavoloProps) {
             </Modal>
 
             <ModalAggiungiPartecipanti modalAggiungiPartecipanti={modalAggiungiPartecipanti} setModalAggiungiPartecipanti={setModalAggiungiPartecipanti} />
+
+            <ModalModficaPartecipanti modalModificaPartecipanti={modalModificaPartecipanti} setModalModificaPartecipanti={setModalModificaPartecipanti} />
         </>
     );
 }

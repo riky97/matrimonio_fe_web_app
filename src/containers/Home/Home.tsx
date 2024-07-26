@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getAllPartecipants, getHouseBySearchInFirebase, getHouseDescription, randomIntFromInterval } from "../../utils/Functions";
-import { AutoComplete, Card, Col, Flex, Image, Input, Modal, Row, Spin } from "antd";
+import { getAllPartecipants, getHouseBySearchInFirebase, getHouseDescription } from "../../utils/Functions";
+import { AutoComplete, Card, Col, Input, Modal, Row, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import "./Home.css";
-import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import { AutoCompletePartecipantsModel, HouseDescriptionModel } from "../../utils/Models";
 import Meta from "antd/es/card/Meta";
 import { useWindowDimensions } from "../../hooks/Hooks";
@@ -70,11 +69,11 @@ function Home(props: IHomeProps) {
 
     function getPaddingByWidth(): number {
         if (width >= 768 && width < 1200) {
-            return 100
+            return 100;
         } else if (width >= 1200) {
-            return 200
+            return 200;
         } else {
-            return 20
+            return 20;
         }
     }
 
@@ -84,15 +83,22 @@ function Home(props: IHomeProps) {
             <div className="home_container">
                 <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
 
-                <Row style={{ padding: "20px 0", paddingLeft: getPaddingByWidth(), paddingRight: getPaddingByWidth(), background: "#8199F4", color: "white", borderBottomRightRadius: 25, borderBottomLeftRadius: 25 }}>
-                    <Col xs={24} >
+                <Row
+                    style={{
+                        padding: "20px 0",
+                        paddingLeft: getPaddingByWidth(),
+                        paddingRight: getPaddingByWidth(),
+                        background: "#8199F4",
+                        color: "white",
+                        borderBottomRightRadius: 25,
+                        borderBottomLeftRadius: 25,
+                    }}
+                >
+                    <Col xs={24}>
                         <h2>Ciao &#128075;</h2>
 
                         <div style={{ marginTop: 10 }}>
-                            <h4>
-                                All'interno del sito potrai cercare il tavolo a cui appartieni, inserendo il tuo nome e cognome all'interno della
-                                barra di ricerca.
-                            </h4>
+                            <h4>All'interno del sito potrai cercare il tavolo a cui appartieni, inserendo il tuo nome e cognome all'interno della barra di ricerca.</h4>
                             <h4>Oppure potrai scoprire cosa riservano le altre casate.</h4>
                             <br />
                             <h4>Buon Proseguimento ! &#127881;</h4>
@@ -127,11 +133,7 @@ function Home(props: IHomeProps) {
                         {houseDescription.map((ele, index) => {
                             return (
                                 <Col key={index} xs={12} sm={12} md={12} lg={8} className="mb-20 d-flex justify-content-center">
-                                    <Card
-                                        hoverable
-                                        style={{}}
-                                        cover={<img style={{ minHeight: 120 }} alt="example" src={ele.image} onClick={() => navigateByCard(ele)} />}
-                                    >
+                                    <Card hoverable style={{}} cover={<img style={{ minHeight: 120 }} alt="example" src={ele.image} onClick={() => navigateByCard(ele)} />}>
                                         <Meta title={ele.title} />
                                     </Card>
                                 </Col>

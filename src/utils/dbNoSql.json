@@ -1,147 +1,187 @@
 {
     "houseDescription": [
         {
-            "id": 0,
-            "title": "House Tyrell",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTyrell.jpg?alt=media&token=5ff9abaa-7dbd-4d1c-a5a5-5eef9d944357",
+            "description": "Casa Tyrell di Alto Giardino è stata una delle Grandi Casate dei Sette Regni. Governava l'Altopiano dal castello di Alto Giardino ed era una famiglia grande e benestante. Casa Tyrell fu una delle grandi case più giovani di Westeros ricevendo i titoli di Lord di Alto Giardino e Protettori del Sud durante la Guerra di Conquista da Aegon il Conquistatore per essersi sottomessi.\nI membri della famiglia hanno tendenzialmente capelli castani mossi e occhi marroni o color nocciola. Il loro stemma è una rosa dorata su un campo verde erba e il loro motto è \"Crescere forti\" (\"Growing Strong\").",
+            "key": 0,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTyrell.jpeg?alt=media&token=b65ac845-f2ef-4b8a-8ccd-4eecb4f2b21f",
+            "participants": [
+                {
+                    "name": "Franco",
+                    "surname": "Ciceri"
+                },
+                {
+                    "name": "Silvia ",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Donatella",
+                    "surname": "Ciceri"
+                },
+                {
+                    "name": "Massimo ",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Matilde",
+                    "surname": "Amella"
+                },
+                {
+                    "name": "Alessandro",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Ginevra",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Carlotta",
+                    "surname": "Fontana"
+                }
+            ],
             "path": "house-tyrell",
-            "participants": [
-                {
-                    "name": "Riccardo",
-                    "surname": "Ingrasciotta"
-                }
-            ]
+            "title": "House Tyrell"
         },
         {
-            "id": 1,
-            "title": "House Arryn",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseArryn.jpg?alt=media&token=151850e4-bec0-4177-885a-d95a968a93ab",
+            "description": "Casa Arryn di Nido dell'Aquila è una delle grandi casate del Continente Occidentale, nonché la principale casata nobiliare della Valle di Arryn. \nIl loro seggio è Nido dell'Aquila, ma controllano varie altre fortezze, fra cui il castello invernale Porte della Luna. \nGli Arryn sono discendenti degli antichi popoli Andali che invasero Westeros e, per via dell'usanza di sposare altri nobili Andali, Casa Arryn risulta essere la casata di più pura discendenza Andala. \nIl loro stemma è composto da un falco e una luna bianca su sfondo blu, e il loro motto è \"In alto come l'Onore\" (\"As High as Honor\").",
+            "key": 1,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseArryn.jpeg?alt=media&token=6e218b10-51c3-4595-a0c0-d4ac1fd39891",
+            "participants": [
+                {
+                    "name": "Francesca",
+                    "surname": "Ingrasciotta"
+                }
+            ],
             "path": "house-arryn",
-            "participants": [
-                {
-                    "name": "Mirko",
-                    "surname": "Pasotti"
-                }
-            ]
+            "title": "House Arryn"
         },
         {
-            "id": 2,
-            "title": "House Baratheon",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseBaratheon.jpg?alt=media&token=ea7679b6-9719-4196-8e20-949dae1df16c",
+            "description": "Casa Baratheon di Capo Tempesta è una delle grandi casate di Westeros e domina sulle Terre della Tempesta. La residenza dei Baratheon è la roccaforte di Capo Tempesta, un antico castello costruito dai loro antenati.\nIl sigillo della casa è un cervo nero incoronato su sfondo giallo e il motto è \"Nostra è la furia\" (\"Ours Is the Fury\").\nCasa Baratheon divenne casa reale dei Sette Regni in seguito alla Ribellione di Robert, in cui Lord Robert Baratheon detronizzò la regnante Casa Targaryen. ",
+            "key": 2,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseBaratheon.jpeg?alt=media&token=2168af85-bf9f-4ea6-83d1-3c2e21833c60",
+            "participants": [
+                {
+                    "name": "Francesca",
+                    "surname": "Ingrasciotta"
+                }
+            ],
             "path": "house-baratheon",
+            "title": "House Baratheon"
+        },
+        {
+            "description": "Casa Bolton di Forte Terrore è un'antica casata estinta del Nord. Il suo seggio era Forte Terrore ed era discendente dai Primi Uomini e risalente all'Età degli Eroi.\nLo stemma di Casa Bolton è un uomo scuoiato legato a testa in giù su un cavalletto a forma di X su un campo nero. Il motto è \"Le nostre lame sono affilate\" (\"Our Blades Are Sharp\") mentre un modo di dire comune tra i Bolton è \"Un uomo scuoiato non ha segreti\".",
+            "key": 3,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseBolton.jpeg?alt=media&token=683d06f5-39d5-4f81-be74-1b9abdb03591",
             "participants": [
                 {
                     "name": "Riccardo",
                     "surname": "Ingrasciotta"
                 }
-            ]
-        },
-        {
-            "id": 3,
-            "title": "House Bolton",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseBolton.jpg?alt=media&token=0ea93cbc-16d0-49bb-863c-ba59a362edee",
+            ],
             "path": "house-bolton",
+            "title": "House Bolton"
+        },
+        {
+            "description": "Casa Greyjoy di Pyke è una delle grandi casate di Westeros e domina sulle Isole di Ferro, un arcipelago cupo e ostile a largo della costa occidentale del continente. Il loro seggio è il castello di Pyke, situato sull'omonima isola.\nI Greyjoy ottennero il controllo delle Isole di Ferro in seguito all'estinzione di Casa Hoare nella Guerra di Conquista.\nIl sigillo di Casa Greyjoy è un kraken dorato su capo nero e il suo motto è \"Noi non seminiamo\" (\"We Do Not Sow\"), per sottolineare la tradizione degli Uomini di Ferro di vivere di razzie e saccheggi verso altri popoli.",
+            "key": 4,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseGreyjoy.jpeg?alt=media&token=4ff45598-be29-47eb-8430-8d56ad2a2406",
             "participants": [
                 {
                     "name": "Riccardo",
                     "surname": "Ingrasciotta"
                 }
-            ]
-        },
-        {
-            "id": 4,
-            "title": "House Greyjoy",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseGreyjoy.jpg?alt=media&token=0b598423-91af-4c03-9cc7-b03d9f1e494e",
+            ],
             "path": "house-greyjoy",
-            "participants": [
-                {
-                    "name": "Riccardo",
-                    "surname": "Ingrasciotta"
-                }
-            ]
+            "title": "House Greyjoy"
         },
         {
-            "id": 5,
-            "title": "House Lannister",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseLannister.jpg?alt=media&token=3fa03b14-7887-40dc-8e3a-8769bd9ce63f",
+            "description": "Casa Lannister di Castel Granito è una delle Grandi case dei Sette Regni e la casa principale delle Terre dell'Ovest. La loro residenza è la roccaforte di Castel Granito sebbene esista un ramo cadetto a Lannisport.\nI Lannister regnarono come Re della Roccia fino alla Conquista dei Targaryen.\nLo stemma di Casa Lannister è un leone d'oro su sfondo rosso mentre il motto è \"Udite il mio ruggito!\" (\"Hear my roar\"), che, tuttavia, è ben meno noto del comune detto \"I Lannister pagano sempre i loro debiti\" (\"A Lannister always pays his debts\").",
+            "key": 5,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseLannister.jpeg?alt=media&token=aa0ae0dd-6a31-49a3-a939-b211e11525e6",
+            "participants": [
+                {
+                    "name": "Martina",
+                    "surname": "Ingrasciotta"
+                }
+            ],
             "path": "house-lannister",
+            "title": "House Lannister"
+        },
+        {
+            "description": "Casa Martell di Lancia del Sole è una delle grandi casate di Westeros e regna sul principato di Dorne.\nLo stemma della casa è un sole rosso perforato da un giavellotto mentre il motto è \"Mai inchinati, mai piegati, mai spezzati\" (\"Unbowed, Unbent, Unbroken\").\n",
+            "key": 6,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseMartel.jpeg?alt=media&token=106eab77-e616-4881-a17f-20a778de32d8",
             "participants": [
                 {
                     "name": "Riccardo",
                     "surname": "Ingrasciotta"
                 }
-            ]
-        },
-        {
-            "id": 6,
-            "title": "House Martel",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseMartel.jpg?alt=media&token=145841fe-65db-4eb7-8aa2-9547759d9479",
+            ],
             "path": "house-martel",
+            "title": "House Martel"
+        },
+        {
+            "description": "Casa Mormont dell'Isola dell'Orso è un'antica casata estinta del Nord fedele a Casa Stark di Grande Inverno. La loro residenza era Isola dell'Orso, nella Baia di Ghiaccio, a nord-ovest di Grande Inverno.\nLa Casa Mormont è una delle poche casate a possedere un'antica arma di acciaio di Valyria, una spada a due mani chiamata Lungo Artiglio, che fu data poi a Jon Snow. Nonostante ciò, data la scarsa disponibilità di risorse preziose sull'Isola dell'Orso, i Mormont sono piuttosto poveri. Il loro palazzo è costruito con enormi tronchi e circondato da una palizzata di terra. Sul portone è posizionata la scultura di una donna in una pelle d'orso che allatta un bambino e impugna un'ascia con la mano libera. Come tutte le donne dell'Isola dell'Orso, le donne Mormont devono imparare a difendersi dagli Uomini di Ferro e dai Bruti.",
+            "key": 7,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseMormont.jpeg?alt=media&token=09fd07e5-ae2a-4a5d-93c8-2aa4b1a42a70",
             "participants": [
                 {
                     "name": "Riccardo",
                     "surname": "Ingrasciotta"
                 }
-            ]
-        },
-        {
-            "id": 7,
-            "title": "House Mormont",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseMormont.jpg?alt=media&token=43f69e76-616c-43c4-958d-a7f8fecd1ba2",
+            ],
             "path": "house-mormont",
-            "participants": [
-                {
-                    "name": "Riccardo",
-                    "surname": "Ingrasciotta"
-                }
-            ]
+            "title": "House Mormont"
         },
         {
-            "id": 8,
-            "title": "House Stark",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseStark.jpg?alt=media&token=d9ff099d-da5d-4d64-9d04-17a5e4a8f092",
+            "description": "Casa Stark di Grande Inverno è una delle grandi casate del Continente Occidentale e la casa reale del Regno del Nord. Governa il Nord dal castello di Grande Inverno, un'antica fortezza conosciuta per la sua solidità.\nNell'antichità i signori di questa casata avevano il titolo di Re dell'Inverno fino alla Guerra di Conquista, quando ottennero il titolo di Protettori del Nord.\nLo stemma della casa è un metalupo grigio su campo bianco e verde mentre il motto è \"L'inverno sta arrivando\" (\"Winter Is Coming\").",
+            "key": 8,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseStark.jpeg?alt=media&token=c8fe4176-8513-48f9-a564-237d0ea90c56",
+            "participants": [
+                {
+                    "name": "Luisa",
+                    "surname": "Ciceri"
+                },
+                {
+                    "name": "Salvatore",
+                    "surname": "Ingrasciotta "
+                },
+                {
+                    "name": "Francesco ",
+                    "surname": "Lisciandra"
+                },
+                {
+                    "name": "Loredana ",
+                    "surname": "Ingoglia"
+                }
+            ],
             "path": "house-stark",
+            "title": "House Stark"
+        },
+        {
+            "description": "La Casa Targaryen di Roccia del Drago è una delle grandi case ed ex casa reale dei Sette Regni. I Targaryen hanno infatti regnato come casa reale di Westeros per quasi trecento anni dalla capitale, Approdo del Re, e dalla fortezza sull'isola Roccia del Drago.\nCasa Targaryen era originariamente una casa proveniente dalla Libera Fortezza di Valyria e una delle quaranta famiglie valyriane in grado di controllare i draghi. Aegon I Targaryen conquistò e unificò i maggiori stati di Westeros nella Guerra di Conquista, creando così i Sette Regni. Casa Targaryen divenne quindi la casa reale del regno e regnò sul Trono di Spade per quasi tre secoli. \nI tratti tipici di casa Targaryen sono d'altro canto quelle tipici Valyriani, spiccatamente di grande bellezza, per alcuni non umana. I capelli sono spesso color dell'argento o di tonalità più chiare dell'oro, anche se casi di capigliatura così chiara da risultare bianca non mancano. Gli occhi sono spesso di un colore indaco oppure di sfumature violette.\nIl loro stemma è un drago a tre teste, che rappresentano Aegon I e le sue sorelle, rosso in campo nero e il loro motto è \"Fuoco e Sangue\" (\"Fire and Blood\").",
+            "key": 9,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTargaryen.jpeg?alt=media&token=ad6b3c15-2540-4849-8581-f1523fc3be5a",
             "participants": [
                 {
                     "name": "Riccardo",
                     "surname": "Ingrasciotta"
                 }
-            ]
-        },
-        {
-            "id": 9,
-            "title": "House Targaryen",
-            "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTargaryen.jpg?alt=media&token=19199799-f34e-4e52-9c68-568301ebb51b",
+            ],
             "path": "house-targaryen",
-            "participants": [
-                {
-                    "name": "Riccardo",
-                    "surname": "Ingrasciotta"
-                }
-            ]
+            "title": "House Targaryen"
         },
         {
-            "id": 10,
-            "title": "House Tarly",
             "description": "Descrizione ",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTarly.jpg?alt=media&token=87744cb7-2682-4711-8d36-b39dca2f6af4",
-            "path": "house-tarly",
+            "key": 10,
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2FHouseTarly.jpeg?alt=media&token=8d7e4ca6-9778-49bb-889c-eedafd6b42c0",
             "participants": [
                 {
                     "name": "Riccardo",
                     "surname": "Ingrasciotta"
                 }
-            ]
+            ],
+            "path": "house-tarly",
+            "title": "House Tarly"
         }
     ]
 }

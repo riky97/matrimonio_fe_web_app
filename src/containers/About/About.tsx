@@ -21,7 +21,7 @@ function About(props: IAboutProps) {
     function moveSearchedUserToTopPosition(partecipants: ParticipantModel[]): ParticipantModel[] {
         if (userSearchedRef.current) {
             const indexFinded: number = partecipants.findIndex((x) => {
-                const user = (x.name + x.surname).toLowerCase();
+                const user = (x.name.replace(/\s/g, "") + x.surname.replace(/\s/g, "")).toLowerCase();
                 const searchedUser = userSearchedRef.current.replace(/\s/g, "").toLowerCase();
                 return user === searchedUser;
             });
