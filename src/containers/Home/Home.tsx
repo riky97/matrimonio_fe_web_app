@@ -9,7 +9,9 @@ import Meta from "antd/es/card/Meta";
 import { useWindowDimensions } from "../../hooks/Hooks";
 import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
-interface IHomeProps { }
+import testStark from "../../resources/images/bg/SITO_Tyrell.jpg";
+
+interface IHomeProps {}
 
 function Home(props: IHomeProps) {
     const [spinning, setSpinning] = useState<boolean>(false);
@@ -98,7 +100,10 @@ function Home(props: IHomeProps) {
                         <h2>Ciao &#128075;</h2>
 
                         <div style={{ marginTop: 10 }}>
-                            <h4>All'interno del sito potrai cercare il tavolo a cui appartieni, inserendo il tuo nome e cognome all'interno della barra di ricerca.</h4>
+                            <h4>
+                                All'interno del sito potrai cercare il tavolo a cui appartieni, inserendo il tuo nome e cognome all'interno della
+                                barra di ricerca.
+                            </h4>
                             <h4>Oppure potrai scoprire cosa riservano le altre casate.</h4>
                             <br />
                             <h4>Buon Proseguimento ! &#127881;</h4>
@@ -133,7 +138,10 @@ function Home(props: IHomeProps) {
                         {houseDescription.map((ele, index) => {
                             return (
                                 <Col key={index} xs={12} sm={12} md={12} lg={8} className="mb-20 d-flex justify-content-center">
-                                    <Card hoverable style={{}} cover={<img style={{ minHeight: 120 }} alt="example" src={ele.image} onClick={() => navigateByCard(ele)} />}>
+                                    <Card
+                                        hoverable
+                                        cover={<img style={{ minHeight: 120 }} alt="example" src={ele.image} onClick={() => navigateByCard(ele)} />}
+                                    >
                                         <Meta title={ele.title} />
                                     </Card>
                                 </Col>

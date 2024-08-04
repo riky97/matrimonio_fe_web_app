@@ -1,21 +1,20 @@
 import { DataSnapshot, child, get } from "firebase/database";
-import { MockDbHouseDescriptions } from "./MockDb";
 import { AutoCompletePartecipantsModel, HouseDescriptionModel, ParticipantModel } from "./Models";
 import { dbRef } from "../firebase";
 import { Modal, ModalFuncProps } from "antd";
 
-export function getHouseBySearch(search: string): HouseDescriptionModel | undefined {
-    let filterElementBySearch = MockDbHouseDescriptions.filter((ele) => {
-        const partecipantFound = findPartecipantBySearch(ele, search);
+// export function getHouseBySearch(search: string): HouseDescriptionModel | undefined {
+//     let filterElementBySearch = MockDbHouseDescriptions.filter((ele) => {
+//         const partecipantFound = findPartecipantBySearch(ele, search);
 
-        if (partecipantFound) {
-            return ele;
-        }
-        return undefined;
-    });
+//         if (partecipantFound) {
+//             return ele;
+//         }
+//         return undefined;
+//     });
 
-    return filterElementBySearch[0];
-}
+//     return filterElementBySearch[0];
+// }
 
 export async function getHouseDescription(): Promise<HouseDescriptionModel[]> {
     const snapshot: DataSnapshot = await get(child(dbRef, `/houseDescription`));
@@ -44,9 +43,9 @@ function findPartecipantBySearch(ele: HouseDescriptionModel, search: string): Pa
     return findPartecipant;
 }
 
-export function getHouseByPath(path: string): HouseDescriptionModel {
-    return MockDbHouseDescriptions.find((x) => x.path === path);
-}
+// export function getHouseByPath(path: string): HouseDescriptionModel {
+//     return MockDbHouseDescriptions.find((x) => x.path === path);
+// }
 
 export function getAllPartecipants(houseDescription: HouseDescriptionModel[]): AutoCompletePartecipantsModel[] {
     const allPartecipants: AutoCompletePartecipantsModel[] = houseDescription.flatMap((item) =>
@@ -56,7 +55,6 @@ export function getAllPartecipants(houseDescription: HouseDescriptionModel[]): A
     );
     return [...new Map(allPartecipants.map((item) => [item.value, item])).values()];
 }
-
 
 export const modalSuccess = (props: ModalFuncProps) => {
     Modal.success(props);
@@ -75,8 +73,9 @@ export function array_move(arr: any[], old_index: number, new_index: number) {
     }
     arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
     return arr;
-};
+}
 
-export function randomIntFromInterval(min: number, max: number) { // min and max included 
+export function randomIntFromInterval(min: number, max: number) {
+    // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
 }

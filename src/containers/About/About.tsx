@@ -8,7 +8,9 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { array_move, randomIntFromInterval } from "../../utils/Functions";
 import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
-interface IAboutProps { }
+import testStark from "../../resources/images/bg/SITO_Tyrell.jpg";
+
+interface IAboutProps {}
 
 function About(props: IAboutProps) {
     const location = useLocation();
@@ -44,6 +46,8 @@ function About(props: IAboutProps) {
             { backgroundColor: "rgba(251, 176, 64, 0.2)", color: "#fbb040" },
             { backgroundColor: "rgba(147, 149, 152, 0.2)", color: "#939598" },
         ];
+
+        const newBgColor = ["#fdf8e4"];
 
         return bgColor[randomIntFromInterval(0, bgColor.length - 1)];
     }
