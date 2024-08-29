@@ -10,6 +10,8 @@ export class HouseDescriptionModel {
     image: string;
     path: string;
     participants?: ParticipantModel[];
+    avatarTextColor: string;
+    avatarBgColor: string;
 }
 
 export class ParticipantModel {

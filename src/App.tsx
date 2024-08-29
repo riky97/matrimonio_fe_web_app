@@ -5,7 +5,6 @@ import Home from "./containers/Home/Home";
 import About from "./containers/About/About";
 import NoMatch from "./containers/NoMatch/NoMatch";
 import ManageHouses from "./containers/ManageHouses/ManageHouses";
-import QrCodeContainer from "./containers/QrCode/QrCode";
 
 const router = createBrowserRouter([{ path: "*", Component: Root, errorElement: true }]);
 
@@ -17,7 +16,6 @@ function Root() {
                     <Route index element={<Home />} />
                     <Route path="about/:tableName" element={<About />} />
                     <Route path="manage/houses" element={<ManageHouses />} />
-                    <Route path="qr-code" element={<QrCodeContainer />} />
 
                     <Route path="*" element={<NoMatch />} />
                 </Route>

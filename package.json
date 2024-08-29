@@ -1,6 +1,6 @@
 {
     "name": "matrimonio_fe_web_app",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "private": true,
     "dependencies": {
         "@ant-design/icons": "^5.3.7",

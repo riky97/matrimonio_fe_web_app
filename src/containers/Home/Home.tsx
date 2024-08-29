@@ -9,8 +9,6 @@ import Meta from "antd/es/card/Meta";
 import { useWindowDimensions } from "../../hooks/Hooks";
 import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
-import testStark from "../../resources/images/bg/SITO_Tyrell.jpg";
-
 interface IHomeProps {}
 
 function Home(props: IHomeProps) {
@@ -78,6 +76,9 @@ function Home(props: IHomeProps) {
             return 20;
         }
     }
+    function filterOption(inputValue: string, option: AutoCompletePartecipantsModel): boolean {
+        return option!.value.toUpperCase().replace(/\s/g, "").indexOf(inputValue.replace(/\s/g, "").toUpperCase()) !== -1;
+    }
 
     return (
         <>
@@ -114,7 +115,7 @@ function Home(props: IHomeProps) {
                                 style={{ width: "100%" }}
                                 options={allPartecipants}
                                 onSelect={onSearchAutoComplete}
-                                filterOption={(inputValue, option) => option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+                                filterOption={filterOption}
                                 className="home_container_searchBar"
                             >
                                 <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />

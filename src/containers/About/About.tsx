@@ -8,8 +8,6 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { array_move, randomIntFromInterval } from "../../utils/Functions";
 import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
-import testStark from "../../resources/images/bg/SITO_Tyrell.jpg";
-
 interface IAboutProps {}
 
 function About(props: IAboutProps) {
@@ -47,8 +45,6 @@ function About(props: IAboutProps) {
             { backgroundColor: "rgba(147, 149, 152, 0.2)", color: "#939598" },
         ];
 
-        const newBgColor = ["#fdf8e4"];
-
         return bgColor[randomIntFromInterval(0, bgColor.length - 1)];
     }
 
@@ -80,8 +76,14 @@ function About(props: IAboutProps) {
                                     <List.Item.Meta
                                         style={{ alignItems: "center" }}
                                         avatar={
-                                            <Avatar size="default" style={getRandomBgColorForPartecipants()}>
-                                                {item.name.charAt(0)}
+                                            <Avatar
+                                                size="default"
+                                                style={{
+                                                    color: houseFindedRef.current.avatarTextColor,
+                                                    backgroundColor: houseFindedRef.current.avatarBgColor,
+                                                }}
+                                            >
+                                                {index + 1}
                                             </Avatar>
                                         }
                                         title={<b>{item.name + " " + item.surname}</b>}
