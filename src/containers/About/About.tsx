@@ -8,7 +8,7 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { array_move, randomIntFromInterval } from "../../utils/Functions";
 import Snowflakes from "../../components/Snowflakes/Snowflakes";
 
-interface IAboutProps {}
+interface IAboutProps { }
 
 function About(props: IAboutProps) {
     const location = useLocation();
@@ -54,18 +54,27 @@ function About(props: IAboutProps) {
             <section className="about_container">
                 <ArrowLeftOutlined className="back-icon" onClick={() => window.open("/", "_self")} />
                 <Row ref={containerImageRef}>
-                    <Col xs={24} sm={0}>
+                    <Col xs={24} lg={12}>
                         <Image src={houseFindedRef.current.image} preview={false} className="about_container_image" />
                     </Col>
-                </Row>
-                <Row ref={containerDescriptionRef} className="about_container_all">
-                    <Col xs={24} sm={0}>
+
+                    <Col xs={0} lg={9} className="about_container--desktop_title">
                         <h3 className="about_contaniner--title">{houseFindedRef.current.title}</h3>
 
                         <div className="about_contaniner--description">{houseFindedRef.current.description}</div>
                     </Col>
 
-                    <Col xs={24} sm={0} style={{ marginTop: 30 }}>
+                </Row>
+                <Row ref={containerDescriptionRef} className="about_container_all">
+                    <Col xs={24} lg={0}>
+                        <h3 className="about_contaniner--title">{houseFindedRef.current.title}</h3>
+
+                        <div className="about_contaniner--description">{houseFindedRef.current.description}</div>
+                    </Col>
+
+                    {/* MOBILE */}
+
+                    <Col xs={24} lg={0} style={{ marginTop: 30 }}>
                         <h3 className="about_contaniner--title mb-10 text-align-center">Partecipanti al tavolo</h3>
 
                         <List
@@ -92,6 +101,40 @@ function About(props: IAboutProps) {
                             )}
                         />
                     </Col>
+
+                    {/* DESKTOP */}
+
+                    <Col xs={0} lg={4} />
+
+                    <Col xs={0} lg={16} style={{ marginTop: 30 }}>
+                        <h3 className="about_contaniner--title mb-10 text-align-center">Partecipanti al tavolo</h3>
+
+                        <List
+                            itemLayout="horizontal"
+                            dataSource={moveSearchedUserToTopPosition(houseFindedRef.current.participants)}
+                            renderItem={(item, index) => (
+                                <List.Item>
+                                    <List.Item.Meta
+                                        style={{ alignItems: "center" }}
+                                        avatar={
+                                            <Avatar
+                                                size="default"
+                                                style={{
+                                                    color: houseFindedRef.current.avatarTextColor,
+                                                    backgroundColor: houseFindedRef.current.avatarBgColor,
+                                                }}
+                                            >
+                                                {index + 1}
+                                            </Avatar>
+                                        }
+                                        title={<b>{item.name + " " + item.surname}</b>}
+                                    />
+                                </List.Item>
+                            )}
+                        />
+                    </Col>
+
+                    <Col xs={0} lg={4} />
                 </Row>
             </section>
         </>
