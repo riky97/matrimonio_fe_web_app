@@ -8,16 +8,32 @@ import { AutoCompletePartecipantsModel, HouseDescriptionModel } from "../../util
 import Meta from "antd/es/card/Meta";
 import { useWindowDimensions } from "../../hooks/Hooks";
 import Snowflakes from "../../components/Snowflakes/Snowflakes";
+import { HeartFilled } from "@ant-design/icons";
 
-interface IHomeProps {}
+interface IHomeProps { }
 
 function Home(props: IHomeProps) {
     const [spinning, setSpinning] = useState<boolean>(false);
+    const [spinningLoadingPage, setSpinningLoadingPage] = useState<boolean>(false);
     const [houseDescription, setHouseDescription] = useState<HouseDescriptionModel[]>([]);
     const [allPartecipants, setAllPartecipants] = useState<AutoCompletePartecipantsModel[]>([]);
-    const { width } = useWindowDimensions();
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const { width } = useWindowDimensions();
     const navigate = useNavigate();
+
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
 
     const modalError = () => {
         Modal.error({
@@ -29,6 +45,7 @@ function Home(props: IHomeProps) {
     useEffect(() => {
         const fecthInitalData = async () => {
             try {
+                setSpinning(true);
                 const data = await getHouseDescription();
                 setHouseDescription(data);
 
@@ -36,6 +53,9 @@ function Home(props: IHomeProps) {
                 setAllPartecipants(partecipants);
             } catch (error) {
                 console.log("error", error);
+            } finally {
+                setSpinning(false);
+                showModal();
             }
         };
 
@@ -80,8 +100,29 @@ function Home(props: IHomeProps) {
         return option!.value.toUpperCase().replace(/\s/g, "").indexOf(inputValue.replace(/\s/g, "").toUpperCase()) !== -1;
     }
 
+    function renderModalRingraziamenti(): JSX.Element {
+        return (
+            <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} okButtonProps={{ style: { display: "none" } }} cancelButtonProps={{ style: { display: "none" } }}>
+                <Row>
+                    <Col xs={24} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                        <HeartFilled style={{ color: "red", fontSize: 30 }} />
+                    </Col>
+                </Row>
+
+                <Row style={{ marginTop: 10 }}>
+                    <Col xs={24} style={{ textAlign: "center" }}>
+                        <h4>Ciao, siamo emozionati di avervi qui con noi per celebrare questo giorno speciale. </h4>
+                        <h4>Grazie per essere parte delle nostre vite.</h4>
+                        <h4>Scopri a quale tavolo sei assegnato !</h4>
+                    </Col>
+                </Row>
+            </Modal>
+        )
+    }
+
     return (
         <>
+            {renderModalRingraziamenti()}
             <Snowflakes />
             <div className="home_container">
                 <Spin spinning={spinning} tip="Loading" size="large" fullscreen />
@@ -98,34 +139,22 @@ function Home(props: IHomeProps) {
                     }}
                 >
                     <Col xs={24}>
-                        <h2>Ciao &#128075;</h2>
+                        <h2>Benvenuto sul nostro sito! 😊</h2>
 
                         <div style={{ marginTop: 10 }}>
-                            <h4>
-                                All'interno del sito potrai cercare il tavolo a cui appartieni, inserendo il tuo nome e cognome all'interno della
-                                barra di ricerca.
-                            </h4>
-                            <h4>Oppure potrai scoprire cosa riservano le altre casate.</h4>
-                            <br />
-                            <h4>Buon Proseguimento ! &#127881;</h4>
+                            <h4 style={{ marginBottom: 10 }}>Qui puoi facilmente trovare il tavolo a cui sei assegnato inserendo il tuo nome e cognome nella barra di ricerca. 🔍</h4>
+
+                            <h4 style={{ marginBottom: 10 }}>Inoltre, scopri anche le sorprese delle altre casate. 🎁</h4>
+
+                            <h4>Buona esplorazione e goditi la festa! 🎉</h4>
                         </div>
 
                         <div style={{ marginTop: 20 }}>
-                            <AutoComplete
-                                style={{ width: "100%" }}
-                                options={allPartecipants}
-                                onSelect={onSearchAutoComplete}
-                                filterOption={filterOption}
-                                className="home_container_searchBar"
-                            >
+                            <AutoComplete style={{ width: "100%" }} options={allPartecipants} onSelect={onSearchAutoComplete} filterOption={filterOption} className="home_container_searchBar">
                                 <Input.Search size="large" placeholder="Nome Cognome" disabled allowClear />
                             </AutoComplete>
                         </div>
                     </Col>
-
-                    {/* <Col  xs={24} sm={24} md={12}>
-                        
-                    </Col> */}
                 </Row>
 
                 <Row className="mt-20" style={{ padding: "20px 0", paddingLeft: getPaddingByWidth(), paddingRight: getPaddingByWidth() }}>
@@ -139,10 +168,7 @@ function Home(props: IHomeProps) {
                         {houseDescription.map((ele, index) => {
                             return (
                                 <Col key={index} xs={12} sm={12} md={12} lg={8} className="mb-20 d-flex justify-content-center">
-                                    <Card
-                                        hoverable
-                                        cover={<img style={{ minHeight: 120 }} alt="example" src={ele.image} onClick={() => navigateByCard(ele)} />}
-                                    >
+                                    <Card hoverable cover={<img style={{ minHeight: 120 }} alt="example" src={ele.image} onClick={() => navigateByCard(ele)} />}>
                                         <Meta title={ele.title} />
                                     </Card>
                                 </Col>
