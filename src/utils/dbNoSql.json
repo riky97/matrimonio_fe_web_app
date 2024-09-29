@@ -1,110 +1,18 @@
 {
     "houseDescription": [
         {
+            "avatarBgColor": "#2C5A00",
+            "avatarTextColor": "#9F942E",
             "description": "Casa Tyrell di Alto Giardino è stata una delle Grandi Casate dei Sette Regni. Governava l'Altopiano dal castello di Alto Giardino ed era una famiglia grande e benestante.\nIl loro stemma è una rosa dorata. Il loro motto è \"Crescere forti\" (\"Growing Strong\").",
             "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseTyrell.jpeg?alt=media&token=6dbd90aa-5adf-4f44-bc8a-a9639c6b5cd0",
             "key": 0,
             "participants": [
                 {
-                    "name": "Lisa",
-                    "surname": "Scotti"
-                },
-                {
-                    "name": "Giulio",
-                    "surname": "Costa"
-                },
-                {
-                    "name": "Edoardo",
-                    "surname": "Costa"
-                },
-                {
-                    "name": "Arianna",
-                    "surname": "Gioletta"
-                },
-                {
-                    "name": "Noelle",
-                    "surname": "La Mattina"
-                },
-                {
-                    "name": "Simone",
-                    "surname": "Javarone"
-                }
-            ],
-            "path": "house-tyrell",
-            "title": "House Tyrell",
-            "avatarBgColor": "#2C5A00",
-            "avatarTextColor": "#9F942E"
-        },
-        {
-            "description": "Casa Arryn di Nido dell'Aquila è una delle grandi casate del Continente Occidentale, nonché la principale casata nobiliare della Valle di Arryn. \nIl loro seggio è Nido dell'Aquila. \nIl loro stemma è composto da un falco e una luna bianca. Il loro motto è \"In alto come l'Onore\" (\"As High as Honor\").",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseArryn.jpeg?alt=media&token=6cd1ae42-3815-4634-852a-db036094ea65",
-            "key": 1,
-            "participants": [
-                {
-                    "name": "Stefano",
-                    "surname": "Pasotti"
-                },
-                {
-                    "name": "Sara ",
-                    "surname": "Calcante"
-                },
-                {
-                    "name": "Silvia",
-                    "surname": "Pasotti"
-                },
-                {
-                    "name": "Luigi",
-                    "surname": "Marinoni"
-                },
-                {
-                    "name": "Davide",
-                    "surname": "Calcante"
-                },
-                {
-                    "name": "Moglie",
-                    "surname": "Calcante"
-                },
-                {
-                    "name": "Figlia",
-                    "surname": "Calcante"
-                },
-                {
-                    "name": "Andrea",
-                    "surname": "Pasotti"
-                }
-            ],
-            "path": "house-arryn",
-            "title": "House Arryn",
-            "avatarBgColor": "#009FBF",
-            "avatarTextColor": "#010F16"
-        },
-        {
-            "description": "Casa Baratheon di Capo Tempesta è una delle grandi casate di Westeros e domina sulle Terre della Tempesta.\nLa residenza dei Baratheon è la roccaforte di Capo Tempesta, un antico castello costruito dai loro antenati.\nIl loro stemma è un cervo nero incoronato. Il motto è \"Nostra è la furia\" (\"Ours Is the Fury\").",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseBarateon.jpeg?alt=media&token=c371ffb8-6113-4c0d-8925-4fc3f80d2212",
-            "key": 2,
-            "participants": [
-                {
-                    "name": "Luisa",
-                    "surname": "Ciceri"
-                },
-                {
-                    "name": "Salvatore",
+                    "name": "Riccardo ",
                     "surname": "Ingrasciotta "
                 },
                 {
-                    "name": "Loredana",
-                    "surname": "Ingoglia"
-                },
-                {
-                    "name": "Francesco",
-                    "surname": "Lisciandra"
-                },
-                {
-                    "name": "Riccardo",
-                    "surname": "Ingrasciotta"
-                },
-                {
-                    "name": "Eva",
+                    "name": "Eva ",
                     "surname": "Santagostini"
                 },
                 {
@@ -112,26 +20,140 @@
                     "surname": "Ingrasciotta "
                 },
                 {
-                    "name": "Vittorio",
-                    "surname": "Lisciandra"
+                    "name": "Carlo ",
+                    "surname": "Boccalini"
                 },
                 {
-                    "name": "Giacomo ",
-                    "surname": "Lisciandra"
+                    "name": "Luca",
+                    "surname": "Bertolacci"
+                },
+                {
+                    "name": "Vittoria ",
+                    "surname": "Pasca "
+                },
+                {
+                    "name": "Erica ",
+                    "surname": "Bertolacci"
+                },
+                {
+                    "name": "Luca ",
+                    "surname": "Oddone"
+                }
+            ],
+            "path": "house-tyrell",
+            "title": "House Tyrell"
+        },
+        {
+            "avatarBgColor": "#009FBF",
+            "avatarTextColor": "#010F16",
+            "description": "Casa Arryn di Nido dell'Aquila è una delle grandi casate del Continente Occidentale, nonché la principale casata nobiliare della Valle di Arryn. \nIl loro seggio è Nido dell'Aquila. \nIl loro stemma è composto da un falco e una luna bianca. Il loro motto è \"In alto come l'Onore\" (\"As High as Honor\").",
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseArryn.jpeg?alt=media&token=6cd1ae42-3815-4634-852a-db036094ea65",
+            "key": 1,
+            "participants": [
+                {
+                    "name": "Mariangela ",
+                    "surname": "Baby-sitter "
+                },
+                {
+                    "name": "Beatrice ",
+                    "surname": "Bonecchi"
+                },
+                {
+                    "name": "Rebecca",
+                    "surname": "Bonecchi"
+                },
+                {
+                    "name": "Matilde",
+                    "surname": "Amella"
+                },
+                {
+                    "name": "Ginevra",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Edoardo ",
+                    "surname": "Costa"
+                },
+                {
+                    "name": "Nathan ",
+                    "surname": "Marta"
+                }
+            ],
+            "path": "house-arryn",
+            "title": "House Arryn"
+        },
+        {
+            "avatarBgColor": "#F9BE02",
+            "avatarTextColor": "#221500",
+            "description": "Casa Baratheon di Capo Tempesta è una delle grandi casate di Westeros e domina sulle Terre della Tempesta.\nLa residenza dei Baratheon è la roccaforte di Capo Tempesta, un antico castello costruito dai loro antenati.\nIl loro stemma è un cervo nero incoronato. Il motto è \"Nostra è la furia\" (\"Ours Is the Fury\").",
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseBarateon.jpeg?alt=media&token=c371ffb8-6113-4c0d-8925-4fc3f80d2212",
+            "key": 2,
+            "participants": [
+                {
+                    "name": "Martina",
+                    "surname": "Ingrasciotta"
+                },
+                {
+                    "name": "Andrea",
+                    "surname": "Bonecchi"
+                },
+                {
+                    "name": "Letizia ",
+                    "surname": "Boccalini"
+                },
+                {
+                    "name": "Paolo",
+                    "surname": "Ranzani"
+                },
+                {
+                    "name": "Arianna ",
+                    "surname": "Gioletta"
+                },
+                {
+                    "name": "Noelle",
+                    "surname": "LaMattina"
+                },
+                {
+                    "name": "Simone",
+                    "surname": "Javarone"
+                },
+                {
+                    "name": "Lisa ",
+                    "surname": "Scotti"
+                },
+                {
+                    "name": "Giulio ",
+                    "surname": "Costa"
                 }
             ],
             "path": "house-baratheon",
-            "title": "House Baratheon",
-            "avatarBgColor": "#F9BE02",
-            "avatarTextColor": "#221500"
+            "title": "House Baratheon"
         },
         {
+            "avatarBgColor": "#030303",
+            "avatarTextColor": "#DEAC05",
             "description": "Casa Greyjoy di Pyke è una delle grandi casate di Westeros e domina sulle Isole di Ferro, un arcipelago cupo e ostile a largo della costa occidentale del continente. Il loro seggio è il castello di Pyke, situato sull'omonima isola.\nIl loro stemma è un kraken dorato. Il motto è \"Noi non seminiamo\" (\"We Do Not Sow\").",
             "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseGreyjoy.jpeg?alt=media&token=b94042d5-7caf-4424-aada-46e56c94cc69",
             "key": 3,
             "participants": [
                 {
-                    "name": "Alessandro",
+                    "name": "Maria Donata ",
+                    "surname": "Ciceri"
+                },
+                {
+                    "name": "Massimo ",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Franco",
+                    "surname": "Ciceri"
+                },
+                {
+                    "name": "Silvia",
+                    "surname": "Fontana"
+                },
+                {
+                    "name": "Alessandro ",
                     "surname": "Fontana"
                 },
                 {
@@ -140,39 +162,15 @@
                 },
                 {
                     "name": "Carlotta",
-                    "surname": "Fontana"
-                },
-                {
-                    "name": "Ginevra",
-                    "surname": "Fontana"
-                },
-                {
-                    "name": "Silvia",
-                    "surname": "Fontana"
-                },
-                {
-                    "name": "Matilde",
-                    "surname": "Amella"
-                },
-                {
-                    "name": "Franco",
-                    "surname": "Ciceri"
-                },
-                {
-                    "name": "Donatella",
-                    "surname": "Ciceri"
-                },
-                {
-                    "name": "Massimo",
-                    "surname": "Fontana"
+                    "surname": "Fontana "
                 }
             ],
             "path": "house-greyjoy",
-            "title": "House Greyjoy",
-            "avatarBgColor": "#030303",
-            "avatarTextColor": "#DEAC05"
+            "title": "House Greyjoy"
         },
         {
+            "avatarBgColor": "#86090A",
+            "avatarTextColor": "#C2AD77",
             "description": "Casa Lannister di Castel Granito è una delle Grandi case dei Sette Regni e la casa principale delle Terre dell'Ovest. La loro residenza è la roccaforte di Castel Granito.\nLo stemma di Casa Lannister è un leone d'oro. Il motto è \"Udite il mio ruggito!\" (\"Hear my roar\").",
             "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseLannister.jpeg?alt=media&token=467d34df-238a-4cda-a3b1-677a7c5e302b",
             "key": 4,
@@ -186,24 +184,24 @@
                     "surname": "Nai"
                 },
                 {
-                    "name": "Daniele",
-                    "surname": "Gandini"
+                    "name": "Sara ",
+                    "surname": "Pasquali "
                 },
                 {
-                    "name": "Sara",
-                    "surname": "Pasquali"
+                    "name": "Daniele",
+                    "surname": "Gandini "
                 },
                 {
                     "name": "Gianluca",
                     "surname": "Bosi"
                 },
                 {
-                    "name": "Matteo",
-                    "surname": "Marinoni"
-                },
-                {
                     "name": "Chiara",
                     "surname": "Stucchi"
+                },
+                {
+                    "name": "Matteo",
+                    "surname": "Marinoni "
                 },
                 {
                     "name": "Maria Letizia",
@@ -215,11 +213,11 @@
                 }
             ],
             "path": "house-lannister",
-            "title": "House Lannister",
-            "avatarBgColor": "#86090A",
-            "avatarTextColor": "#C2AD77"
+            "title": "House Lannister"
         },
         {
+            "avatarBgColor": "#FF7E00",
+            "avatarTextColor": "#BE0000",
             "description": "Casa Martell di Lancia del Sole è una delle grandi casate di Westeros e regna sul principato di Dorne.\nLo stemma della casa è un sole rosso perforato da un giavellotto. Il motto è \"Mai inchinati, mai piegati, mai spezzati\" (\"Unbowed, Unbent, Unbroken\").\n",
             "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseMartell.jpeg?alt=media&token=82f28c8d-a76f-450d-92be-9814b69fbf97",
             "key": 5,
@@ -253,143 +251,133 @@
                     "surname": "Merli"
                 },
                 {
-                    "name": "Micol",
-                    "surname": "Schepis"
-                },
-                {
                     "name": "Roberto",
                     "surname": "Marta"
                 },
                 {
-                    "name": "Nathan",
-                    "surname": "Marta"
+                    "name": "Micol",
+                    "surname": "Schepis "
                 }
             ],
             "path": "house-martel",
-            "title": "House Martel",
-            "avatarBgColor": "#FF7E00",
-            "avatarTextColor": "#BE0000"
+            "title": "House Martel"
         },
         {
+            "avatarBgColor": "#014901",
+            "avatarTextColor": "#000900",
             "description": "Casa Mormont dell'Isola dell'Orso è un'antica casata. La loro residenza era Isola dell'Orso, nella Baia di Ghiaccio, a nord-ovest di Grande Inverno.\nIl loro stemma è un Orso.  Il loro motto è \"Qui ci ergiamo\".",
             "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseMarmont.jpeg?alt=media&token=81b5f88f-bc57-4cfa-aac3-6433b6a25698",
             "key": 6,
             "participants": [
                 {
-                    "name": "Carlo",
+                    "name": "Tavolo ",
+                    "surname": "Staff"
+                }
+            ],
+            "path": "house-mormont",
+            "title": "House Mormont"
+        },
+        {
+            "avatarBgColor": "#F9F4DE",
+            "avatarTextColor": "#8F8C85",
+            "description": "Casa Stark di Grande Inverno è una delle grandi casate del Continente Occidentale e la casa reale del Regno del Nord. Governa il Nord dal castello di Grande Inverno, un'antica fortezza conosciuta per la sua solidità.\nLo stemma della casa è un metalupo grigio. Il motto è \"L'inverno sta arrivando\" (\"Winter Is Coming\").",
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseStark.jpeg?alt=media&token=7e4d60f8-9480-4b61-98ef-6106bb760830",
+            "key": 7,
+            "participants": [
+                {
+                    "name": "Loredana ",
+                    "surname": "Conti"
+                },
+                {
+                    "name": "Giulio ",
+                    "surname": "Pasotti"
+                },
+                {
+                    "name": "Sara ",
+                    "surname": "Calcante"
+                },
+                {
+                    "name": "Stefano ",
+                    "surname": "Pasotti"
+                },
+                {
+                    "name": "Andrea",
+                    "surname": "Pasotti"
+                },
+                {
+                    "name": "Silvia ",
+                    "surname": "Pasotti"
+                },
+                {
+                    "name": "Luigi",
+                    "surname": "Marinoni"
+                },
+                {
+                    "name": "Mariangela ",
+                    "surname": "Rossetti "
+                },
+                {
+                    "name": "Andrea",
+                    "surname": "Giordano"
+                },
+                {
+                    "name": "Don Cesare",
+                    "surname": "Depaoli"
+                }
+            ],
+            "path": "house-stark",
+            "title": "House Stark"
+        },
+        {
+            "avatarBgColor": "#070707",
+            "avatarTextColor": "#AE0001",
+            "description": "La Casa Targaryen di Roccia del Drago è una delle grandi case ed ex casa reale dei Sette Regni. \nIl loro stemma è un drago a tre teste. Il loro motto è \"Fuoco e Sangue\" (\"Fire and Blood\").",
+            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHaouseTargaryen.jpeg?alt=media&token=524923bb-e997-4d1a-aeb9-3f49580d775b",
+            "key": 8,
+            "participants": [
+                {
+                    "name": "Luisa ",
+                    "surname": "Ciceri"
+                },
+                {
+                    "name": "Salvatore",
+                    "surname": "Ingrasciotta "
+                },
+                {
+                    "name": "Anna",
+                    "surname": "Giussani"
+                },
+                {
+                    "name": "Giuseppe ",
                     "surname": "Boccalini"
                 },
                 {
-                    "name": "Luca",
+                    "name": "Cristina ",
+                    "surname": "Fasani"
+                },
+                {
+                    "name": "Massimo ",
                     "surname": "Bertolacci"
                 },
                 {
-                    "name": "Vittoria",
-                    "surname": "Pasca"
-                },
-                {
-                    "name": "Luca",
-                    "surname": "Oddone"
+                    "name": "Patrizia ",
+                    "surname": "Armando "
                 },
                 {
                     "name": "Marco",
                     "surname": "Oddone"
                 },
                 {
-                    "name": "Patrizia",
-                    "surname": "Armando"
+                    "name": "Claudio ",
+                    "surname": "Pasturenzi "
                 },
                 {
-                    "name": "Massimo",
-                    "surname": "Bertolacci"
-                },
-                {
-                    "name": "Cristina",
-                    "surname": "Fasani"
-                },
-                {
-                    "name": "Giuseppe",
-                    "surname": "Boccalini"
-                },
-                {
-                    "name": "Anna",
-                    "surname": "Giussani"
-                }
-            ],
-            "path": "house-mormont",
-            "title": "House Mormont",
-            "avatarBgColor": "#014901",
-            "avatarTextColor": "#000900"
-        },
-        {
-            "description": "Casa Stark di Grande Inverno è una delle grandi casate del Continente Occidentale e la casa reale del Regno del Nord. Governa il Nord dal castello di Grande Inverno, un'antica fortezza conosciuta per la sua solidità.\nLo stemma della casa è un metalupo grigio. Il motto è \"L'inverno sta arrivando\" (\"Winter Is Coming\").",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHouseStark.jpeg?alt=media&token=7e4d60f8-9480-4b61-98ef-6106bb760830",
-            "key": 7,
-            "participants": [
-                {
-                    "name": "Martina",
-                    "surname": "Ingrasciotta"
-                },
-                {
-                    "name": "Andrea",
-                    "surname": "Bonecchi"
-                },
-                {
-                    "name": "Beatrice",
-                    "surname": "Bonecchi"
-                },
-                {
-                    "name": "Rebecca",
-                    "surname": "Bonecchi"
-                },
-                {
-                    "name": "Letizia",
-                    "surname": "Boccalini"
-                },
-                {
-                    "name": "Paolo",
-                    "surname": "Ranzani"
-                },
-                {
-                    "name": "Cora",
-                    "surname": "Boccalini"
-                },
-                {
-                    "name": "Micheal",
-                    "surname": "Chiappa"
-                }
-            ],
-            "path": "house-stark",
-            "title": "House Stark",
-            "avatarBgColor": "#F9F4DE",
-            "avatarTextColor": "#8F8C85"
-        },
-        {
-            "description": "La Casa Targaryen di Roccia del Drago è una delle grandi case ed ex casa reale dei Sette Regni. \nIl loro stemma è un drago a tre teste. Il loro motto è \"Fuoco e Sangue\" (\"Fire and Blood\").",
-            "image": "https://firebasestorage.googleapis.com/v0/b/matrimonio-fe-web-app.appspot.com/o/houses%2Fnew%2FHaouseTargaryen.jpeg?alt=media&token=524923bb-e997-4d1a-aeb9-3f49580d775b",
-            "key": 8,
-            "participants": [
-                {
-                    "name": "Loredana",
-                    "surname": "Conti"
-                },
-                {
-                    "name": "Giulio",
-                    "surname": "Pasotti"
-                },
-                {
-                    "name": "Tilde",
-                    "surname": "Conti"
-                },
-                {
-                    "name": "Aurelio ",
-                    "surname": "Menni"
+                    "name": "Don ",
+                    "surname": "Marko"
                 }
             ],
             "path": "house-targaryen",
-            "title": "House Targaryen",
-            "avatarBgColor": "#070707",
-            "avatarTextColor": "#AE0001"
+            "title": "House Targaryen"
         }
     ]
 }
